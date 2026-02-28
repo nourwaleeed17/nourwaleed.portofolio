@@ -758,16 +758,11 @@
     function buildModalThumbs() {
         const strip = document.getElementById('mThumbs');
         strip.innerHTML = currentPhotos.map((p, i) => {
-            const isContain = p.fit === 'contain';
-            const bg    = isContain ? '#0d0d0d' : (p.src ? '#0d0d0d' : p.bg);
-            const inset = isContain ? '3px' : '0';
-            const img = p.src
-                ? `<img class="modal-thumb-img" src="${p.src}" alt="" style="object-fit:${p.fit};inset:${inset};">`
-                : '';
+            const bgImage = p.src ? `background-image:url("${p.src}");` : '';
+            const bgColor = `background-color:${p.src ? '#0d0d0d' : p.bg};`;
             return `<div class="modal-thumb ${i === 0 ? 'is-locked' : ''}"
-                         style="background:${bg};"
+                         style="${bgImage}${bgColor}"
                          data-idx="${i}">
-                        ${img}
                         <span>${p.label}</span>
                     </div>`;
         }).join('');
@@ -783,16 +778,13 @@
     function setMainPhoto(idx) {
         const photo  = currentPhotos[idx];
         const mainEl = document.getElementById('mPhotoMain');
-        const imgEl  = document.getElementById('mPhotoImg');
 
         if (photo.src) {
-            imgEl.src            = photo.src;
-            imgEl.style.objectFit = photo.fit;
-            imgEl.style.display  = 'block';
-            mainEl.style.background = '#0d0d0d';
+            mainEl.style.backgroundImage = `url("${photo.src}")`;
+            mainEl.style.backgroundColor = '#0d0d0d';
         } else {
-            imgEl.style.display  = 'none';
-            mainEl.style.background = photo.bg;
+            mainEl.style.backgroundImage = '';
+            mainEl.style.backgroundColor = photo.bg;
         }
 
         document.getElementById('mPhotoLabel').textContent = photo.label;
