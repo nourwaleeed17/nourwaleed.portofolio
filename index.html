@@ -760,13 +760,13 @@
         const strip = document.getElementById('mThumbs');
         strip.innerHTML = currentPhotos.map((p, i) => {
             const isContain = p.fit === 'contain';
-            const bg  = isContain ? '#0d0d0d' : (p.src ? '#0d0d0d' : p.bg);
-            const pad = isContain ? 'padding:3px;' : '';
+            const bg    = isContain ? '#0d0d0d' : (p.src ? '#0d0d0d' : p.bg);
+            const inset = isContain ? '3px' : '0';
             const img = p.src
-                ? `<img class="modal-thumb-img" src="${p.src}" alt="" style="object-fit:${p.fit};">`
+                ? `<img class="modal-thumb-img" src="${p.src}" alt="" style="object-fit:${p.fit};inset:${inset};">`
                 : '';
             return `<div class="modal-thumb ${i === 0 ? 'is-locked' : ''}"
-                         style="background:${bg};${pad}"
+                         style="background:${bg};"
                          data-idx="${i}">
                         ${img}
                         <span>${p.label}</span>
