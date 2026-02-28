@@ -1202,8 +1202,11 @@ body.modal-open { overflow: hidden; }
     align-items: flex-end;
     justify-content: center;
     padding-bottom: 18px;
-    background: #0d0d0d;
-    transition: background .18s ease;
+    background-color: #0d0d0d;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-color .18s ease;
     cursor: default;
 }
 
@@ -1303,6 +1306,9 @@ body.modal-open { overflow: hidden; }
     border: 1.5px solid transparent;
     transition: border-color .15s, transform .15s;
     box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .modal-thumb-img {
@@ -1367,6 +1373,10 @@ body.modal-open { overflow: hidden; }
     }
 
     .modal-close { top: 16px; right: 16px; }
+
+    .modal-photo-main {
+        background-size: contain;
+    }
 
     .modal-thumbs {
         height: 60px;
