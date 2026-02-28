@@ -328,6 +328,7 @@
             <div class="modal-right">
                 <div class="modal-photo-wrap">
                     <div class="modal-photo-main" id="mPhotoMain">
+                        <img class="modal-photo-img" id="mPhotoImg" alt="" aria-hidden="true">
                         <span  class="modal-photo-label"   id="mPhotoLabel"></span>
                         <button class="modal-photo-arrow modal-photo-prev" id="mPhotoPrev" aria-label="Previous photo">&#8249;</button>
                         <button class="modal-photo-arrow modal-photo-next" id="mPhotoNext" aria-label="Next photo">&#8250;</button>
@@ -358,10 +359,10 @@
                     { value: '0',    label: 'Site Clashes' }
                 ],
                 photos: [
-                    { bg: 'url("photos/1.png")', label: 'Coordination Plan — L4' },
-                    { bg: '#071a35', label: 'HVAC Routing Detail' },
-                    { bg: '#091e3d', label: 'Clash Report Extract' },
-                    { bg: '#061220', label: 'Approved Submission' }
+                    { src: 'photos/1.png',  fit: 'cover', label: 'Coordination Plan — L4' },
+                    { src: null, bg: '#071a35', fit: 'cover', label: 'HVAC Routing Detail' },
+                    { src: null, bg: '#091e3d', fit: 'cover', label: 'Clash Report Extract' },
+                    { src: null, bg: '#061220', fit: 'cover', label: 'Approved Submission' }
                 ],
                 tags: ['AutoCAD', 'Revit', 'ASD', '200+ Drawings']
             },
@@ -376,10 +377,10 @@
                     { value: '0',    label: 'RFIs Raised' }
                 ],
                 photos: [
-                    { bg: '#0b1a2e', label: 'Duct Layout — Plan' },
-                    { bg: '#081422', label: 'Section Through Beam' },
-                    { bg: '#0d2040', label: 'Isometric View' },
-                    { bg: '#09182e', label: 'Approval Stamp' }
+                    { src: null, bg: '#0b1a2e', fit: 'cover', label: 'Duct Layout — Plan' },
+                    { src: null, bg: '#081422', fit: 'cover', label: 'Section Through Beam' },
+                    { src: null, bg: '#0d2040', fit: 'cover', label: 'Isometric View' },
+                    { src: null, bg: '#09182e', fit: 'cover', label: 'Approval Stamp' }
                 ],
                 tags: ['AutoCAD', 'MEP Coordination', 'Clash Detection', 'ASD']
             },
@@ -393,9 +394,9 @@
                     { value: '—', label: 'Metric 2' }
                 ],
                 photos: [
-                    { bg: '#0d1824', label: 'Photo 1' },
-                    { bg: '#0b1520', label: 'Photo 2' },
-                    { bg: '#0f1d2c', label: 'Photo 3' }
+                    { src: null, bg: '#0d1824', fit: 'cover', label: 'Photo 1' },
+                    { src: null, bg: '#0b1520', fit: 'cover', label: 'Photo 2' },
+                    { src: null, bg: '#0f1d2c', fit: 'cover', label: 'Photo 3' }
                 ],
                 tags: ['AutoCAD', 'Revit', 'Your Tags']
             }
@@ -412,10 +413,10 @@
                     { value: 'Live', label: 'Data Refresh' }
                 ],
                 photos: [
-                    { bg: '#04160a', label: 'Overview Dashboard' },
-                    { bg: '#061c0c', label: 'Cost Breakdown' },
-                    { bg: '#081e0e', label: 'Variance Chart' },
-                    { bg: '#051810', label: 'Work Package Drill' }
+                    { src: 'photos/str-dashboard.png', fit: 'contain', label: 'Skeletal Cost Dashboard' },
+                    { src: 'photos/dashbaord.png',     fit: 'contain', label: 'Cost Breakdown by Discipline' },
+                    { src: null, bg: '#081e0e', fit: 'contain', label: 'Variance Chart' },
+                    { src: null, bg: '#051810', fit: 'contain', label: 'Work Package Drill' }
                 ],
                 tags: ['Power BI', 'Excel', 'BOQ Analytics', 'Cost Reporting']
             },
@@ -430,10 +431,10 @@
                     { value: '3 Days', label: 'Avg. Resolution' }
                 ],
                 photos: [
-                    { bg: '#051c0e', label: 'IPC Summary Page' },
-                    { bg: '#071a0c', label: 'Claimed vs Certified' },
-                    { bg: '#042010', label: 'Dispute Flag View' },
-                    { bg: '#06180e', label: 'Monthly Report' }
+                    { src: null, bg: '#051c0e', fit: 'contain', label: 'IPC Summary Page' },
+                    { src: null, bg: '#071a0c', fit: 'contain', label: 'Claimed vs Certified' },
+                    { src: null, bg: '#042010', fit: 'contain', label: 'Dispute Flag View' },
+                    { src: null, bg: '#06180e', fit: 'contain', label: 'Monthly Report' }
                 ],
                 tags: ['Power BI', 'IPC Preparation', 'Invoice Auditing', 'Excel']
             }
@@ -450,10 +451,10 @@
                     { value: '100%',   label: 'Model-Driven' }
                 ],
                 photos: [
-                    { bg: '#180808', label: 'Add-on Interface' },
-                    { bg: '#1c0606', label: 'Revit Model Input' },
-                    { bg: '#200a0a', label: 'Excel Output Sheet' },
-                    { bg: '#150606', label: 'QTO Summary' }
+                    { src: null, bg: '#180808', fit: 'contain', label: 'Add-on Interface' },
+                    { src: null, bg: '#1c0606', fit: 'contain', label: 'Revit Model Input' },
+                    { src: null, bg: '#200a0a', fit: 'contain', label: 'Excel Output Sheet' },
+                    { src: null, bg: '#150606', fit: 'contain', label: 'QTO Summary' }
                 ],
                 tags: ['Python', 'PyRevit', 'Revit API', 'Excel Automation']
             },
@@ -468,10 +469,10 @@
                     { value: '0',    label: 'Manual Entries' }
                 ],
                 photos: [
-                    { bg: '#1a0606', label: 'Script Interface' },
-                    { bg: '#160808', label: 'Room Schedule Input' },
-                    { bg: '#1e080a', label: 'Finish Assignment' },
-                    { bg: '#180a0a', label: 'Output Verification' }
+                    { src: null, bg: '#1a0606', fit: 'contain', label: 'Script Interface' },
+                    { src: null, bg: '#160808', fit: 'contain', label: 'Room Schedule Input' },
+                    { src: null, bg: '#1e080a', fit: 'contain', label: 'Finish Assignment' },
+                    { src: null, bg: '#180a0a', fit: 'contain', label: 'Output Verification' }
                 ],
                 tags: ['Python', 'PyRevit', 'Revit API', 'BIM Automation']
             }
@@ -757,13 +758,20 @@
 
     function buildModalThumbs() {
         const strip = document.getElementById('mThumbs');
-        strip.innerHTML = currentPhotos.map((p, i) =>
-            `<div class="modal-thumb ${i === 0 ? 'is-locked' : ''}"
-                  style="background:${p.bg};"
-                  data-idx="${i}">
-                <span>${p.label}</span>
-             </div>`
-        ).join('');
+        strip.innerHTML = currentPhotos.map((p, i) => {
+            const isContain = p.fit === 'contain';
+            const bg  = isContain ? '#0d0d0d' : (p.src ? '#0d0d0d' : p.bg);
+            const pad = isContain ? 'padding:3px;' : '';
+            const img = p.src
+                ? `<img class="modal-thumb-img" src="${p.src}" alt="" style="object-fit:${p.fit};">`
+                : '';
+            return `<div class="modal-thumb ${i === 0 ? 'is-locked' : ''}"
+                         style="background:${bg};${pad}"
+                         data-idx="${i}">
+                        ${img}
+                        <span>${p.label}</span>
+                    </div>`;
+        }).join('');
 
         strip.querySelectorAll('.modal-thumb').forEach(thumb => {
             const idx = parseInt(thumb.dataset.idx, 10);
@@ -776,7 +784,18 @@
     function setMainPhoto(idx) {
         const photo  = currentPhotos[idx];
         const mainEl = document.getElementById('mPhotoMain');
-        mainEl.style.background = photo.bg;
+        const imgEl  = document.getElementById('mPhotoImg');
+
+        if (photo.src) {
+            imgEl.src            = photo.src;
+            imgEl.style.objectFit = photo.fit;
+            imgEl.style.display  = 'block';
+            mainEl.style.background = '#0d0d0d';
+        } else {
+            imgEl.style.display  = 'none';
+            mainEl.style.background = photo.bg;
+        }
+
         document.getElementById('mPhotoLabel').textContent = photo.label;
         updatePhotoArrows(idx);
     }
