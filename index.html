@@ -11,6 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
+    <!-- Three.js ES module import map -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.module.js"
+        }
+    }
+    </script>
 </head>
 <body>
 
@@ -34,7 +42,17 @@
          HERO
     ═══════════════════════════════════════ -->
     <section id="hero">
-        <canvas id="grid-canvas"></canvas>
+        <!-- Three.js 3D scene container -->
+        <div id="hero-3d"></div>
+
+        <!-- Blueprint corner decorators -->
+        <div class="bp-corner bp-corner--tl"></div>
+        <div class="bp-corner bp-corner--tr"></div>
+        <div class="bp-corner bp-corner--bl"></div>
+        <div class="bp-corner bp-corner--br"></div>
+
+        <!-- Scanning beam overlay -->
+        <div class="hero-scanline"></div>
 
         <div class="hero-inner">
             <span class="hero-label" id="typewriter"><span class="cursor"></span></span>
@@ -60,22 +78,22 @@
     ═══════════════════════════════════════ -->
     <section id="stats" class="stats">
         <div class="stats-inner">
-            <div class="stat-item">
-                <span class="stat-number">7</span>
-                <span class="stat-label">Buildings</span>
+            <div class="stat-item" data-reveal>
+                <span class="stat-number">3</span>
+                <span class="stat-label">Projects</span>
             </div>
             <div class="stat-divider"></div>
-            <div class="stat-item">
-                <span class="stat-number">~7B</span>
+            <div class="stat-item" data-reveal data-delay="1">
+                <span class="stat-number">~9.8B</span>
                 <span class="stat-label">EGP Project Value</span>
             </div>
             <div class="stat-divider"></div>
-            <div class="stat-item">
-                <span class="stat-number">3</span>
+            <div class="stat-item" data-reveal data-delay="2">
+                <span class="stat-number">2</span>
                 <span class="stat-label">Automation Tools Built</span>
             </div>
             <div class="stat-divider"></div>
-            <div class="stat-item">
+            <div class="stat-item" data-reveal data-delay="3">
                 <span class="stat-number">200+</span>
                 <span class="stat-label">Coordinated Drawings</span>
             </div>
@@ -87,12 +105,12 @@
     ═══════════════════════════════════════ -->
     <section id="pillars" class="pillars">
         <div class="container">
-            <p class="section-label">// expertise</p>
-            <h2 class="section-title">Three Core Competencies</h2>
+            <p class="section-label" data-reveal>// expertise</p>
+            <h2 class="section-title" data-reveal data-delay="1">Three Core Competencies</h2>
             <div class="pillars-grid">
 
                 <!-- Pillar 1: Shop Drawing -->
-                <div class="pillar-card">
+                <div class="pillar-card" data-reveal>
                     <div class="pillar-icon">
                         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="3" y="3" width="30" height="30" rx="1" stroke="#00c8ff" stroke-width="1.5"/>
@@ -115,7 +133,7 @@
                 </div>
 
                 <!-- Pillar 2: BIM Automation (Featured) -->
-                <div class="pillar-card pillar-card--featured">
+                <div class="pillar-card pillar-card--featured" data-reveal data-delay="1">
                     <div class="pillar-icon">
                         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <polyline points="14,8 7,18 14,28" stroke="#00c8ff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
@@ -134,7 +152,7 @@
                 </div>
 
                 <!-- Pillar 3: Analytics -->
-                <div class="pillar-card">
+                <div class="pillar-card" data-reveal data-delay="2">
                     <div class="pillar-icon">
                         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="4" y="26" width="6" height="6" rx="0.5" stroke="#00c8ff" stroke-width="1.5"/>
@@ -167,7 +185,7 @@
             <span class="section-label">// selected work</span>
             <div class="tabs" id="tabs">
                 <button class="tab active" data-cat="shop">Shop Drawing</button>
-                <button class="tab"        data-cat="analytics">Analytics</button>
+                <button class="tab"        data-cat="analytics">Project Control</button>
                 <button class="tab"        data-cat="bim">BIM Automation</button>
             </div>
         </header>
@@ -204,10 +222,10 @@
     ═══════════════════════════════════════ -->
     <section id="stack" class="stack">
         <div class="container">
-            <p class="section-label">// tools &amp; stack</p>
-            <h2 class="section-title">What I Work With</h2>
+            <p class="section-label" data-reveal>// tools &amp; stack</p>
+            <h2 class="section-title" data-reveal data-delay="1">What I Work With</h2>
             <div class="stack-grid">
-                <div class="stack-group">
+                <div class="stack-group" data-reveal>
                     <p class="stack-group-label">BIM &amp; CAD</p>
                     <div class="stack-items">
                         <div class="stack-item">AutoCAD</div>
@@ -215,7 +233,7 @@
                         <div class="stack-item">Civil 3D</div>
                     </div>
                 </div>
-                <div class="stack-group">
+                <div class="stack-group" data-reveal data-delay="1">
                     <p class="stack-group-label">Automation</p>
                     <div class="stack-items">
                         <div class="stack-item">Dynamo Script</div>
@@ -223,14 +241,14 @@
                         <div class="stack-item">Revit API</div>
                     </div>
                 </div>
-                <div class="stack-group">
+                <div class="stack-group" data-reveal data-delay="2">
                     <p class="stack-group-label">Analytics</p>
                     <div class="stack-items">
                         <div class="stack-item">Power BI</div>
                         <div class="stack-item">Excel</div>
                     </div>
                 </div>
-                <div class="stack-group">
+                <div class="stack-group" data-reveal data-delay="3">
                     <p class="stack-group-label">Project Management</p>
                     <div class="stack-items">
                         <div class="stack-item">Primavera P6</div>
@@ -246,7 +264,7 @@
     ═══════════════════════════════════════ -->
     <section id="about" class="about">
         <div class="container">
-            <div class="about-inner">
+            <div class="about-inner" data-reveal>
                 <div class="about-label-col">
                     <p class="section-label">// about</p>
                     <div class="about-accent-line"></div>
@@ -271,15 +289,12 @@
     ═══════════════════════════════════════ -->
     <section id="contact" class="contact">
         <div class="container">
-            <p class="section-label">// contact</p>
-            <h2 class="contact-title">Open to<br>Opportunities.</h2>
-            <p class="contact-sub">Technical office roles, BIM automation projects,<br>and freelance engagements.</p>
-            <div class="contact-links">
-                <!-- REPLACE: your actual email address -->
+            <p class="section-label" data-reveal>// contact</p>
+            <h2 class="contact-title" data-reveal data-delay="1">Open to<br>Opportunities.</h2>
+            <p class="contact-sub" data-reveal data-delay="2">Technical office roles, BIM automation projects,<br>and freelance engagements.</p>
+            <div class="contact-links" data-reveal data-delay="3">
                 <a href="mailto:nooor.walid@gmail.com" class="btn-primary">Email Me</a>
-                <!-- REPLACE: your LinkedIn profile URL -->
                 <a href="https://www.linkedin.com/in/nour-waleed-09965a204" target="_blank" rel="noopener" class="btn-outline">LinkedIn</a>
-                <!-- REPLACE: path to your CV PDF when ready -->
                 <a href="Nour Eldin Waleed - CV.pdf" target="_blank" class="btn-ghost">Download CV</a>
             </div>
         </div>
@@ -340,7 +355,456 @@
         </div>
     </div>
 
-    <script>
+    <script type="module">
+    import * as THREE from 'three';
+
+    /* ════════════════════════════════════════════
+       THREE.JS HERO — BIM TOWER IN SPACE
+    ════════════════════════════════════════════ */
+    (function initHero3D() {
+        const container = document.getElementById('hero-3d');
+        const W = window.innerWidth;
+        const H = window.innerHeight;
+
+        const scene = new THREE.Scene();
+        scene.fog = new THREE.FogExp2(0x080808, 0.020);
+
+        const camera = new THREE.PerspectiveCamera(55, W / H, 0.1, 200);
+        camera.position.set(-1, 3, 17);
+        camera.lookAt(2, 2.5, 0);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(W, H);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+        renderer.setClearColor(0x000000, 0);
+        renderer.outputColorSpace = THREE.SRGBColorSpace;
+        container.appendChild(renderer.domElement);
+
+        const CYAN = 0x00c8ff;
+
+        /* ── Main tower ── */
+        const buildingGroup = new THREE.Group();
+        const FLOOR_COUNT = 20;
+        const FLOOR_H     = 0.45;
+        const FLOOR_GAP   = 0.08;
+        const STEP        = FLOOR_H + FLOOR_GAP;
+        const TOWER_W     = 4.2;
+        const TOWER_D     = 2.6;
+
+        for (let i = 0; i < FLOOR_COUNT; i++) {
+            const t   = i / (FLOOR_COUNT - 1);
+            const geo = new THREE.BoxGeometry(TOWER_W - t * 0.4, FLOOR_H, TOWER_D - t * 0.2);
+            const seg = new THREE.LineSegments(
+                new THREE.EdgesGeometry(geo),
+                new THREE.LineBasicMaterial({ color: CYAN, transparent: true, opacity: 0.07 + t * 0.16 })
+            );
+            seg.position.y = i * STEP;
+            buildingGroup.add(seg);
+        }
+
+        /* ── Corner columns ── */
+        const totalH = FLOOR_COUNT * STEP;
+        [[-TOWER_W / 2, -TOWER_D / 2], [TOWER_W / 2, -TOWER_D / 2],
+         [-TOWER_W / 2,  TOWER_D / 2], [TOWER_W / 2,  TOWER_D / 2]].forEach(([cx, cz]) => {
+            const pts = [new THREE.Vector3(cx, -0.1, cz), new THREE.Vector3(cx, totalH + 0.1, cz)];
+            const col = new THREE.Line(
+                new THREE.BufferGeometry().setFromPoints(pts),
+                new THREE.LineBasicMaterial({ color: CYAN, transparent: true, opacity: 0.38 })
+            );
+            buildingGroup.add(col);
+        });
+
+        /* ── Horizontal cross-braces every 4 floors ── */
+        for (let i = 0; i < FLOOR_COUNT; i += 4) {
+            const y = i * STEP + FLOOR_H / 2;
+            const pts = [
+                new THREE.Vector3(-TOWER_W / 2, y, -TOWER_D / 2),
+                new THREE.Vector3( TOWER_W / 2, y,  TOWER_D / 2),
+            ];
+            buildingGroup.add(new THREE.Line(
+                new THREE.BufferGeometry().setFromPoints(pts),
+                new THREE.LineBasicMaterial({ color: CYAN, transparent: true, opacity: 0.07 })
+            ));
+        }
+
+        /* ── Secondary tower ── */
+        const tower2 = new THREE.Group();
+        const T2 = 13;
+        for (let i = 0; i < T2; i++) {
+            const t   = i / (T2 - 1);
+            const geo = new THREE.BoxGeometry(2.9 - t * 0.2, FLOOR_H, 2.0);
+            const seg = new THREE.LineSegments(
+                new THREE.EdgesGeometry(geo),
+                new THREE.LineBasicMaterial({ color: CYAN, transparent: true, opacity: 0.05 + t * 0.10 })
+            );
+            seg.position.y = i * STEP;
+            tower2.add(seg);
+        }
+        /* columns for tower2 */
+        [[-1.45, -1], [1.45, -1], [-1.45, 1], [1.45, 1]].forEach(([cx, cz]) => {
+            const pts = [new THREE.Vector3(cx, 0, cz), new THREE.Vector3(cx, T2 * STEP, cz)];
+            tower2.add(new THREE.Line(
+                new THREE.BufferGeometry().setFromPoints(pts),
+                new THREE.LineBasicMaterial({ color: CYAN, transparent: true, opacity: 0.28 })
+            ));
+        });
+        tower2.position.set(-4.5, 0, -0.5);
+        buildingGroup.add(tower2);
+
+        /* ── Third small tower (background depth) ── */
+        const tower3 = new THREE.Group();
+        for (let i = 0; i < 8; i++) {
+            const geo = new THREE.BoxGeometry(2.0, FLOOR_H, 1.5);
+            const seg = new THREE.LineSegments(
+                new THREE.EdgesGeometry(geo),
+                new THREE.LineBasicMaterial({ color: CYAN, transparent: true, opacity: 0.03 + (i / 7) * 0.05 })
+            );
+            seg.position.y = i * STEP;
+            tower3.add(seg);
+        }
+        tower3.position.set(2.8, -2, -5.5);
+        buildingGroup.add(tower3);
+
+        buildingGroup.position.set(3, -4.5, -3);
+        scene.add(buildingGroup);
+
+        /* ── Ground grid plane ── */
+        const GRID_SIZE = 50, DIVS = 25;
+        const gStep = GRID_SIZE / DIVS;
+        const gVerts = [];
+        for (let i = 0; i <= DIVS; i++) {
+            const p = -GRID_SIZE / 2 + i * gStep;
+            gVerts.push(-GRID_SIZE / 2, 0, p,  GRID_SIZE / 2, 0, p);
+            gVerts.push(p, 0, -GRID_SIZE / 2,  p, 0, GRID_SIZE / 2);
+        }
+        const gGeo = new THREE.BufferGeometry();
+        gGeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(gVerts), 3));
+        const gridMesh = new THREE.LineSegments(gGeo,
+            new THREE.LineBasicMaterial({ color: CYAN, transparent: true, opacity: 0.032 })
+        );
+        gridMesh.position.set(3, -4.6, -3);
+        scene.add(gridMesh);
+
+        /* ── Particles (structural data nodes) ── */
+        const P_COUNT = 750;
+        const pPos = new Float32Array(P_COUNT * 3);
+        for (let i = 0; i < P_COUNT; i++) {
+            pPos[i * 3]     = (Math.random() - 0.5) * 70;
+            pPos[i * 3 + 1] = (Math.random() - 0.5) * 50;
+            pPos[i * 3 + 2] = (Math.random() - 0.5) * 60 - 15;
+        }
+        const pGeo = new THREE.BufferGeometry();
+        pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+        const particles = new THREE.Points(pGeo,
+            new THREE.PointsMaterial({ color: CYAN, size: 0.055, transparent: true, opacity: 0.38, sizeAttenuation: true })
+        );
+        scene.add(particles);
+
+        /* ── Secondary large particle layer (background ambience) ── */
+        const P2 = 200;
+        const pPos2 = new Float32Array(P2 * 3);
+        for (let i = 0; i < P2; i++) {
+            pPos2[i * 3]     = (Math.random() - 0.5) * 100;
+            pPos2[i * 3 + 1] = (Math.random() - 0.5) * 80;
+            pPos2[i * 3 + 2] = -30 - Math.random() * 60;
+        }
+        const pGeo2 = new THREE.BufferGeometry();
+        pGeo2.setAttribute('position', new THREE.BufferAttribute(pPos2, 3));
+        const particles2 = new THREE.Points(pGeo2,
+            new THREE.PointsMaterial({ color: 0x0066aa, size: 0.1, transparent: true, opacity: 0.2, sizeAttenuation: true })
+        );
+        scene.add(particles2);
+
+        /* ── Mouse parallax ── */
+        let tX = 0, tY = 0, cX = 0, cY = 0;
+        window.addEventListener('mousemove', e => {
+            tX = (e.clientX / window.innerWidth  - 0.5) * 2;
+            tY = (e.clientY / window.innerHeight - 0.5) * 2;
+        });
+
+        /* ── Resize ── */
+        window.addEventListener('resize', () => {
+            const nW = window.innerWidth, nH = window.innerHeight;
+            camera.aspect = nW / nH;
+            camera.updateProjectionMatrix();
+            renderer.setSize(nW, nH);
+        });
+
+        /* ── Animation loop ── */
+        const clock = new THREE.Clock();
+        renderer.setAnimationLoop(() => {
+            const t = clock.getElapsedTime();
+
+            cX += (tX - cX) * 0.025;
+            cY += (tY - cY) * 0.025;
+            camera.position.x = -1 + cX * 2.0;
+            camera.position.y = 3.0 - cY * 1.2;
+            camera.lookAt(2, 2.5, 0);
+
+            buildingGroup.rotation.y = t * 0.045;
+            particles.rotation.y     = t * 0.016;
+            particles.rotation.x     = Math.sin(t * 0.04) * 0.04;
+            particles2.rotation.y    = -t * 0.008;
+
+            renderer.render(scene, camera);
+        });
+    })();
+
+    /* ════════════════════════════════════════════
+       SCROLL REVEAL — IntersectionObserver
+    ════════════════════════════════════════════ */
+    const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-revealed');
+                revealObs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('[data-reveal]').forEach(el => revealObs.observe(el));
+
+    /* ════════════════════════════════════════════
+       3D CARD TILT — mouse-driven perspective
+    ════════════════════════════════════════════ */
+    document.querySelectorAll('.pillar-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const r = card.getBoundingClientRect();
+            const x = ((e.clientX - r.left)  / r.width  - 0.5) * 2;
+            const y = ((e.clientY - r.top)   / r.height - 0.5) * 2;
+            card.style.transform = `perspective(700px) rotateX(${-y * 6}deg) rotateY(${x * 6}deg) translateZ(12px)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(700px) rotateX(0deg) rotateY(0deg) translateZ(0)';
+        });
+    });
+
+    /* ════════════════════════════════════════════
+       REVIT BIM CANVAS — animated isometric building per slide
+    ════════════════════════════════════════════ */
+    function animateSlideBackground(slide, cat) {
+        const canvas = document.createElement('canvas');
+        canvas.className = 'slide-bim-canvas';
+
+        // Insert between slide-bg and slide-pattern so gradient fades it naturally
+        const pattern = slide.querySelector('.slide-pattern');
+        slide.insertBefore(canvas, pattern);
+
+        function resize() {
+            canvas.width  = Math.round(slide.offsetWidth  * 0.62) || 700;
+            canvas.height = Math.round(slide.offsetHeight)        || 420;
+        }
+        resize();
+
+        const ctx = canvas.getContext('2d');
+
+        // Per-category palette
+        const pal = {
+            shop:      { r: 0,   g: 200, b: 255, ra: 0,   ga: 140, ba: 255 },
+            analytics: { r: 0,   g: 210, b: 110, ra: 0,   ga: 255, ba: 170 },
+            bim:       { r: 220, g: 75,  b: 75,  ra: 255, ga: 150, ba: 50  },
+        }[cat] || { r: 0, g: 200, b: 255, ra: 0, ga: 140, ba: 255 };
+        const { r, g, b, ra, ga, ba } = pal;
+
+        function rgba(R, G, B, a) { return `rgba(${R},${G},${B},${a.toFixed(3)})`; }
+
+        // Building dimensions
+        const FLOORS = 6, BW = 10, BD = 7, STORY = 2.5;
+
+        // Isometric helpers — recalculated on every frame in case canvas resized
+        function iso(x, y, z) {
+            const sc = canvas.width * 0.030;
+            const ox = canvas.width  * 0.38;
+            const oy = canvas.height * 0.68;
+            return {
+                x: ox + (x - z) * sc * 0.866,
+                y: oy - y * sc  + (x + z) * sc * 0.5,
+            };
+        }
+
+        function seg(x1,y1,z1, x2,y2,z2, color, lw) {
+            const a = iso(x1,y1,z1), b = iso(x2,y2,z2);
+            ctx.beginPath();
+            ctx.strokeStyle = color;
+            ctx.lineWidth   = lw || 1;
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+        }
+
+        // ── Floor slab ──
+        function drawFloor(f, op) {
+            const y = f * STORY;
+            const c = rgba(r,g,b, op);
+            seg(0,y,0,  BW,y,0,  c);
+            seg(BW,y,0, BW,y,BD, c);
+            seg(BW,y,BD, 0,y,BD, c);
+            seg(0,y,BD,  0,y,0,  c);
+            // Partitions
+            const cp = rgba(r,g,b, op * 0.28);
+            seg(0,y,BD/2, BW,y,BD/2, cp);
+            [BW/3, 2*BW/3].forEach(xp => seg(xp,y,0, xp,y,BD, cp));
+        }
+
+        // ── Columns ──
+        function drawColumns(prog) {
+            const xs = [0, BW/3, 2*BW/3, BW];
+            const zs = [0, BD/2, BD];
+            const topY = (FLOORS-1) * STORY * prog;
+            xs.forEach(cx => zs.forEach(cz => {
+                seg(cx,0,cz, cx,topY,cz, rgba(255,255,255, 0.42*prog), 0.9);
+            }));
+        }
+
+        // ── Beams at each floor ──
+        function drawBeams(f, op) {
+            const y = f * STORY;
+            const c = rgba(r,g,b, op * 0.55);
+            const xs = [0, BW/3, 2*BW/3, BW];
+            const zs = [0, BD/2, BD];
+            zs.forEach(cz => seg(0,y,cz, BW,y,cz, c, 1.1));
+            xs.forEach(cx => seg(cx,y,0, cx,y,BD,  c, 1.1));
+        }
+
+        // ── Glowing node dots at column-floor intersections ──
+        function drawNodes(op, t) {
+            const xs = [0, BW/3, 2*BW/3, BW];
+            const zs = [0, BD/2, BD];
+            for (let f = 0; f < FLOORS; f++) {
+                const y = f * STORY;
+                xs.forEach((cx,ci) => zs.forEach((cz,zi) => {
+                    const phase = (ci*3+zi)*7 + f*11;
+                    const pulse = 0.35 + 0.30 * Math.sin(t * 0.065 + phase);
+                    const p = iso(cx, y, cz);
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, 1.8, 0, Math.PI*2);
+                    ctx.fillStyle = rgba(r,g,b, op * pulse);
+                    ctx.fill();
+                }));
+            }
+        }
+
+        // ── MEP Duct routing (Shop Drawing) ──
+        function drawMEP(op) {
+            const ductColor  = rgba(ra,ga,ba, op);
+            const branchColor= rgba(ra,ga,ba, op * 0.6);
+            const riserColor = rgba(ra,ga,ba, op * 0.4);
+            const y1 = STORY * 1 + 1.4;
+            const y2 = STORY * 3 + 1.4;
+            // Main trunk
+            seg(0.5, y1, BD/2, BW-0.5, y1, BD/2, ductColor, 2.2);
+            // Branch ducts
+            [BW/3, 2*BW/3].forEach(xp => seg(xp, y1, 0.5, xp, y1, BD-0.5, branchColor, 1.8));
+            // Second trunk
+            seg(1, y2, 1, BW-1, y2, 1, rgba(ra,ga,ba, op*0.45), 1.8);
+            // Riser
+            seg(BW/2, STORY*0.5, BD/2, BW/2, STORY*3.5, BD/2, riserColor, 1.2);
+
+            // Duct end caps (small squares)
+            [[0.5, y1, BD/2], [BW-0.5, y1, BD/2]].forEach(([x,y,z]) => {
+                const p = iso(x,y,z);
+                ctx.strokeStyle = ductColor;
+                ctx.lineWidth = 1;
+                ctx.strokeRect(p.x - 3, p.y - 3, 6, 6);
+            });
+        }
+
+        // ── Data bars rising (Analytics) ──
+        function drawDataBars(op, t) {
+            const barVals = [0.60, 0.88, 0.45, 0.94, 0.72, 0.55];
+            const maxH = 5.5;
+            const prog = Math.min(1, t * 0.018);
+            barVals.forEach((val, i) => {
+                const bx = 0.8 + i * 1.52;
+                const bz = BD * 0.48;
+                const bH = val * maxH * prog;
+                if (bH < 0.05) return;
+                const tc = rgba(ra,ga,ba, op * val);
+                const sc2= rgba(ra,ga,ba, op * val * 0.35);
+                // Top face
+                seg(bx,bH,bz, bx+0.7,bH,bz,   tc, 1.2);
+                seg(bx+0.7,bH,bz, bx+0.7,bH,bz+0.7, tc, 1.2);
+                seg(bx+0.7,bH,bz+0.7, bx,bH,bz+0.7, tc, 1.2);
+                seg(bx,bH,bz+0.7, bx,bH,bz,    tc, 1.2);
+                // Vertical edges
+                seg(bx,0,bz, bx,bH,bz, sc2);
+                seg(bx+0.7,0,bz, bx+0.7,bH,bz, sc2);
+            });
+        }
+
+        // ── BIM element selection highlight (BIM Automation) ──
+        function drawBIMSelect(op, t) {
+            const pulse = 0.55 + 0.45 * Math.sin(t * 0.07);
+            // Selected columns (orange)
+            [BW/3, 2*BW/3].forEach(cx => {
+                seg(cx,0,BD/2, cx,(FLOORS-1)*STORY,BD/2, rgba(ra,ga,ba, op*pulse*0.75), 2.2);
+            });
+            // Selected slab (cyan, brighter)
+            const sy = 2 * STORY;
+            const sc3= rgba(r,g,b, op*pulse*0.55);
+            seg(0,sy,0, BW,sy,0, sc3, 2.5);
+            seg(BW,sy,0, BW,sy,BD, sc3, 2.5);
+            seg(BW,sy,BD, 0,sy,BD, sc3, 2.5);
+            seg(0,sy,BD, 0,sy,0, sc3, 2.5);
+            // Parameter labels (dots)
+            const cp = iso(BW/3, FLOORS*STORY*0.5, BD/2);
+            ctx.fillStyle = rgba(ra,ga,ba, op*0.8*pulse);
+            [0, 14, 28].forEach(dy => {
+                ctx.beginPath();
+                ctx.arc(cp.x + 22, cp.y - 10 + dy, 2.5, 0, Math.PI*2);
+                ctx.fill();
+            });
+            // Connecting tick lines
+            ctx.strokeStyle = rgba(ra,ga,ba, op*0.3*pulse);
+            ctx.lineWidth = 0.7;
+            [0, 14, 28].forEach(dy => {
+                ctx.beginPath();
+                ctx.moveTo(cp.x + 4, cp.y - 10 + dy);
+                ctx.lineTo(cp.x + 18, cp.y - 10 + dy);
+                ctx.stroke();
+            });
+        }
+
+        // ── Animation loop ──
+        let T = 0;
+        const PHASE_FLOOR = 10;  // frames per floor
+        const PHASE_COLS  = FLOORS * PHASE_FLOOR + 5;
+        const PHASE_EXTRA = PHASE_COLS + 30;
+
+        function loop() {
+            if (!document.body.contains(canvas)) return;
+            T++;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw floors bottom-up with staggered reveal
+            for (let f = 0; f < FLOORS; f++) {
+                const prog = Math.min(1, Math.max(0, (T - f * PHASE_FLOOR) / PHASE_FLOOR));
+                if (prog <= 0) continue;
+                drawFloor(f, 0.08 + (f/(FLOORS-1)) * 0.12 + prog * 0.04);
+                if (prog >= 0.7) drawBeams(f, prog);
+            }
+
+            // Columns
+            if (T > PHASE_COLS) drawColumns(Math.min(1, (T - PHASE_COLS) / 30));
+
+            // Column node dots
+            if (T > PHASE_COLS + 15) {
+                drawNodes(Math.min(1, (T - PHASE_COLS - 15) / 20), T);
+            }
+
+            // Category-specific elements
+            if (T > PHASE_EXTRA) {
+                const op = Math.min(0.8, (T - PHASE_EXTRA) / 22);
+                if (cat === 'shop')      drawMEP(op);
+                else if (cat === 'analytics') drawDataBars(op, T);
+                else if (cat === 'bim') drawBIMSelect(op, T);
+            }
+
+            requestAnimationFrame(loop);
+        }
+        loop();
+    }
+
     /* ════════════════════════════════════════════
        CAROUSEL DATA  (real project content)
        bg: solid colour — pattern overlay added by CSS per data-cat
@@ -349,8 +813,8 @@
         shop: [
             {
                 bg: '#060d1b',
-                title: 'Commercial Tower Structural Shop Drawings',
-                desc: 'Full shop drawings for all structural elements with BBS',
+                title: 'Commercial Tower Shop Drawings',
+                desc: 'Full structural shop drawings for all structural elements with BBS',
                 fullDesc: 'Full MEP coordination for a 22-storey commercial tower in Cairo — routing HVAC ducts, electrical cable trays, and plumbing through structural bays across 11 occupied floors. All slab penetrations and beam clearances were pre-coordinated with the structural consultant before any RFI was raised on site.',
                 stats: [
                     { value: '11',   label: 'Floors' },
@@ -503,8 +967,8 @@
         DATA[cat].forEach((s, i) => {
             const slide = document.createElement('div');
             slide.className   = 'slide';
-            slide.dataset.cat = newCat;  /* drives CSS pattern per category */
-            slide.dataset.idx = i;       /* used by modal open */
+            slide.dataset.cat = newCat;
+            slide.dataset.idx = i;
             slide.innerHTML = `
                 <div class="slide-bg" style="background:${s.bg};"></div>
                 <div class="slide-pattern"></div>
@@ -517,7 +981,9 @@
                         ${s.tags.map(t => `<span class="slide-tag">${t}</span>`).join('')}
                     </div>
                 </div>`;
+
             track.appendChild(slide);
+            animateSlideBackground(slide, newCat);
 
             const dot = document.createElement('button');
             dot.className = 'dot' + (i === 0 ? ' active' : '');
@@ -530,8 +996,7 @@
     }
 
     function build(newCat) {
-        if (newCat === cat) { doBuild(newCat); return; }  /* initial load — no fade */
-        /* category switch: fade out → rebuild → fade in */
+        if (newCat === cat) { doBuild(newCat); return; }
         carouselWrap.classList.add('is-switching');
         setTimeout(() => {
             doBuild(newCat);
@@ -606,88 +1071,6 @@
     typeNext();
 
     /* ════════════════════════════════════════════
-       INTERACTIVE GRID CANVAS
-    ════════════════════════════════════════════ */
-    const canvas  = document.getElementById('grid-canvas');
-    const ctx     = canvas.getContext('2d');
-    const CELL    = 58;
-    const R_CELLS = 3.8;
-
-    let mx = -9999, my = -9999;
-    let dirty = true;
-
-    function resizeCanvas() {
-        canvas.width  = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
-        dirty = true;
-    }
-
-    function drawFrame() {
-        requestAnimationFrame(drawFrame);
-        if (!dirty) return;
-        dirty = false;
-
-        const W = canvas.width;
-        const H = canvas.height;
-        ctx.clearRect(0, 0, W, H);
-
-        /* static grid lines */
-        ctx.beginPath();
-        ctx.strokeStyle = 'rgba(255,255,255,0.045)';
-        ctx.lineWidth   = 1;
-        for (let x = CELL; x < W; x += CELL) {
-            ctx.moveTo(x + .5, 0);
-            ctx.lineTo(x + .5, H);
-        }
-        for (let y = CELL; y < H; y += CELL) {
-            ctx.moveTo(0,  y + .5);
-            ctx.lineTo(W, y + .5);
-        }
-        ctx.stroke();
-
-        /* per-cell glow near cursor */
-        if (mx > -100) {
-            const radius = CELL * R_CELLS;
-            const c0 = Math.max(0, Math.floor((mx - radius) / CELL));
-            const c1 = Math.ceil((mx + radius) / CELL);
-            const r0 = Math.max(0, Math.floor((my - radius) / CELL));
-            const r1 = Math.ceil((my + radius) / CELL);
-
-            for (let c = c0; c <= c1; c++) {
-                for (let r = r0; r <= r1; r++) {
-                    const cx   = c * CELL + CELL * .5;
-                    const cy   = r * CELL + CELL * .5;
-                    const dist = Math.hypot(mx - cx, my - cy);
-                    const t    = Math.max(0, 1 - dist / radius);
-                    if (t < 0.015) continue;
-
-                    ctx.fillStyle = `rgba(0,200,255,${t * 0.11})`;
-                    ctx.fillRect(c * CELL, r * CELL, CELL, CELL);
-
-                    ctx.strokeStyle = `rgba(0,200,255,${t * 0.38})`;
-                    ctx.lineWidth   = 1;
-                    ctx.strokeRect(c * CELL + .5, r * CELL + .5, CELL - 1, CELL - 1);
-                }
-            }
-
-            /* soft radial bloom */
-            const g = ctx.createRadialGradient(mx, my, 0, mx, my, CELL * 2.2);
-            g.addColorStop(0, 'rgba(0,200,255,0.06)');
-            g.addColorStop(1, 'rgba(0,200,255,0)');
-            ctx.fillStyle = g;
-            ctx.fillRect(0, 0, W, H);
-        }
-    }
-
-    const hero = document.getElementById('hero');
-    hero.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dirty = true; });
-    hero.addEventListener('mouseleave', () => { mx = -9999; my = -9999; dirty = true; });
-    window.addEventListener('resize', resizeCanvas);
-
-    resizeCanvas();
-    drawFrame();
-
-    /* ════════════════════════════════════════════
        MODAL ENGINE
     ════════════════════════════════════════════ */
     const modalBackdrop = document.getElementById('modalBackdrop');
@@ -698,12 +1081,11 @@
     let lockedPhotoIdx = 0;
     let currentPhotos  = [];
 
-    const CAT_LABELS = { shop: 'Shop Drawing', analytics: 'Analytics', bim: 'BIM Automation' };
+    const CAT_LABELS = { shop: 'Shop Drawing', analytics: 'Project Control', bim: 'BIM Automation' };
 
     function openModal(catKey, projIdx) {
         const proj = DATA[catKey][projIdx];
 
-        /* left panel */
         document.getElementById('mCat').textContent  = CAT_LABELS[catKey];
         document.getElementById('mTitle').innerHTML  = proj.title;
         document.getElementById('mDesc').textContent = proj.fullDesc;
@@ -723,20 +1105,17 @@
         if (proj.pdf) { pdfEl.href = proj.pdf; pdfEl.style.display = ''; }
         else           { pdfEl.style.display = 'none'; }
 
-        /* photos */
         currentPhotos  = proj.photos;
         lockedPhotoIdx = 0;
         buildModalThumbs();
         setMainPhoto(0);
         updatePhotoCounter();
 
-        /* open */
         modalBackdrop.classList.add('is-open');
         modalEl.classList.add('is-open');
         document.body.classList.add('modal-open');
         modalIsOpen = true;
 
-        /* stagger left-panel elements after modal finishes opening */
         const animEls = modalEl.querySelectorAll('.modal-animate');
         animEls.forEach(el => el.classList.remove('animate-in'));
         setTimeout(() => {
@@ -810,7 +1189,6 @@
         document.getElementById('mPhotoNext').disabled = activeIdx === currentPhotos.length - 1;
     }
 
-    /* photo navigation */
     document.getElementById('mPhotoPrev').addEventListener('click', () => {
         lockPhoto(Math.max(0, lockedPhotoIdx - 1));
     });
@@ -818,11 +1196,9 @@
         lockPhoto(Math.min(currentPhotos.length - 1, lockedPhotoIdx + 1));
     });
 
-    /* close triggers */
     modalClose.addEventListener('click', closeModal);
     modalBackdrop.addEventListener('click', closeModal);
 
-    /* swipe on main photo */
     let photoTouchX = 0;
     document.getElementById('mPhotoMain').addEventListener('touchstart', e => {
         photoTouchX = e.touches[0].clientX;
@@ -835,7 +1211,6 @@
         );
     }, { passive: true });
 
-    /* open modal via "View Project" button — event delegation on carousel track */
     track.addEventListener('click', e => {
         const btn = e.target.closest('.slide-view-btn');
         if (!btn) return;
