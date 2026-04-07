@@ -1,3 +1,20 @@
+// On load: animate scroll to top if browser restored a mid-page position
+window.addEventListener('load', function () {
+  const start = window.scrollY;
+  if (start === 0) return;
+  const duration = Math.min(900, 400 + start * 0.25);
+  const startTime = performance.now();
+  function ease(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+  function step(now) {
+    const t = Math.min((now - startTime) / duration, 1);
+    window.scrollTo(0, start * (1 - ease(t)));
+    if (t < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+});
+
 /* ════════════════════════════════════════════════════════════
    Portfolio Script — Nour Eldin Waleed
    Sections:
