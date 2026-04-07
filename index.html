@@ -1,1222 +1,701 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nour Eldin Waleed Muhammed — Technical Office Engineer specializing in shop drawing coordination, BIM automation, and construction analytics.">
-    <meta name="theme-color" content="#080808">
-    <title>Nour Eldin Waleed Muhammed — Technical Office Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nour Eldin Waleed Muhammed — BIM Engineer & Automation Developer specializing in Revit API, PyRevit, shop drawing coordination, and construction analytics.">
+  <meta name="theme-color" content="#08080f">
+  <title>Nour Eldin Waleed — BIM Engineer & Automation Developer</title>
 
-    <!-- Three.js ES module import map -->
-    <script type="importmap">
-    {
-        "imports": {
-            "three": "https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.module.js"
-        }
-    }
-    </script>
+  <!-- Google Fonts: Space Grotesk, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ═══════════════════════════════════════
-         NAVIGATION
-    ═══════════════════════════════════════ -->
-    <nav class="nav">
-        <div class="nav-inner">
-            <a href="#hero" class="nav-logo">NEW<span class="accent">.</span></a>
-            <ul class="nav-links">
-                <li><a href="#pillars">Expertise</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#stack">Stack</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact" class="nav-cta">Contact</a></li>
-            </ul>
-        </div>
+  <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════ -->
+  <nav id="nav">
+    <div class="nav-inner">
+
+      <!-- Monogram logo -->
+      <a href="#hero" class="nav-logo">NW</a>
+
+      <!-- Desktop links -->
+      <div class="nav-links">
+        <a href="#expertise" data-nav="expertise">Expertise</a>
+        <a href="#work"      data-nav="work">Work</a>
+        <a href="#stack"     data-nav="stack">Stack</a>
+        <a href="#about"     data-nav="about">About</a>
+        <a href="#contact"   data-nav="contact">Contact</a>
+        <a href="Nour Eldin Waleed - CV.pdf" target="_blank" rel="noopener" class="nav-cv">Download CV</a>
+      </div>
+
+      <!-- Hamburger (mobile only) -->
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       MOBILE MENU OVERLAY
+  ═══════════════════════════════════════ -->
+  <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true">
+    <button class="mobile-overlay-close" id="mobileOverlayClose" aria-label="Close navigation menu">&times;</button>
+    <nav class="mobile-overlay-nav">
+      <a href="#expertise">Expertise</a>
+      <a href="#work">Work</a>
+      <a href="#stack">Stack</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="Nour Eldin Waleed - CV.pdf" target="_blank" rel="noopener">Download CV</a>
     </nav>
+  </div>
 
-    <!-- ═══════════════════════════════════════
-         HERO
-    ═══════════════════════════════════════ -->
-    <section id="hero">
-        <!-- Three.js 3D scene container -->
-        <div id="hero-3d"></div>
+  <!-- ═══════════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════════ -->
+  <section id="hero" class="hero">
 
-        <!-- Blueprint corner decorators -->
-        <div class="bp-corner bp-corner--tl"></div>
-        <div class="bp-corner bp-corner--tr"></div>
-        <div class="bp-corner bp-corner--bl"></div>
-        <div class="bp-corner bp-corner--br"></div>
+    <!-- Slideshow background — 3 crossfading panels -->
+    <div class="hero-slides" aria-hidden="true">
 
-        <!-- Scanning beam overlay -->
-        <div class="hero-scanline"></div>
-
-        <div class="hero-inner">
-            <span class="hero-label" id="typewriter"><span class="cursor"></span></span>
-
-            <h1 class="hero-name">
-                Nour Eldin <span class="slash">/</span><br>
-                Waleed Muhammed
-            </h1>
-
-            <p class="hero-sub">Technical Office &middot; BIM Specialist &middot; Automation Developer</p>
-
-            <a href="#work" class="hero-cta">View My Work &darr;</a>
+      <!-- Slide 0: Shop Drawing / Architectural -->
+      <div class="hero-slide active" data-slide="0">
+        <div class="hero-slide-cols">
+          <div class="hero-slide-col" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuB2SnxpPjdaKolotBC3LPCi_hNVN8uG6oHmbT5mQWm02qq6Io8voCkY-azsFt425WBEjtHS2k2EYcadTWfEf51SM02qUgJNHexdr-3i4B8ybDhl9ZkMxXMCJoWGysPazp6a0-uq3Tq2qYW32bFs1arR3AJUbEOpjxFzLb0Hinn5WSj5vH1CS9paPqa8D_nuVofoVfApy26ZcgKUDSY637T0_-VbbKhNuFNSBzpoGGdQoY8xaknUcY2sHw34Vuwqb640ystbJ8v8x7Co');background-position:left center;"></div>
+          <div class="hero-slide-col" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuB2SnxpPjdaKolotBC3LPCi_hNVN8uG6oHmbT5mQWm02qq6Io8voCkY-azsFt425WBEjtHS2k2EYcadTWfEf51SM02qUgJNHexdr-3i4B8ybDhl9ZkMxXMCJoWGysPazp6a0-uq3Tq2qYW32bFs1arR3AJUbEOpjxFzLb0Hinn5WSj5vH1CS9paPqa8D_nuVofoVfApy26ZcgKUDSY637T0_-VbbKhNuFNSBzpoGGdQoY8xaknUcY2sHw34Vuwqb640ystbJ8v8x7Co');background-position:center;"></div>
+          <div class="hero-slide-col" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuB2SnxpPjdaKolotBC3LPCi_hNVN8uG6oHmbT5mQWm02qq6Io8voCkY-azsFt425WBEjtHS2k2EYcadTWfEf51SM02qUgJNHexdr-3i4B8ybDhl9ZkMxXMCJoWGysPazp6a0-uq3Tq2qYW32bFs1arR3AJUbEOpjxFzLb0Hinn5WSj5vH1CS9paPqa8D_nuVofoVfApy26ZcgKUDSY637T0_-VbbKhNuFNSBzpoGGdQoY8xaknUcY2sHw34Vuwqb640ystbJ8v8x7Co');background-position:right center;"></div>
         </div>
+      </div>
 
-        <div class="hero-scroll">
-            <div class="scroll-line"></div>
-            <span>scroll</span>
+      <!-- Slide 1: BIM Automation / Circuit patterns -->
+      <div class="hero-slide" data-slide="1">
+        <div class="hero-slide-cols">
+          <div class="hero-slide-col" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuCnvTInAghqFFJvKXTnPeUwMcRuXNevffr2BU8DD9csN_Em5xRCiTAqC7j4tvsgeB2Hru0iUZMe-uLsSoxL_Fk-7rxNMg1EGnMg6Omdv69VWIyjIi2b1qL2jSqkYzIB4NmqU3NvrMhBXdVkMD5D6WS0Lzeo6oedNdWDZvNXpW6q4GFYROwyEjVlp3KZua3LV5U2LTM3q2YFtpFEk-BQV6OgtQpOJWuX2AN0G_rN3R5zspnnHmzcG2s67ikgm4S9A9rt2n3Isup5LZ0L');background-position:left center;"></div>
+          <div class="hero-slide-col" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuCnvTInAghqFFJvKXTnPeUwMcRuXNevffr2BU8DD9csN_Em5xRCiTAqC7j4tvsgeB2Hru0iUZMe-uLsSoxL_Fk-7rxNMg1EGnMg6Omdv69VWIyjIi2b1qL2jSqkYzIB4NmqU3NvrMhBXdVkMD5D6WS0Lzeo6oedNdWDZvNXpW6q4GFYROwyEjVlp3KZua3LV5U2LTM3q2YFtpFEk-BQV6OgtQpOJWuX2AN0G_rN3R5zspnnHmzcG2s67ikgm4S9A9rt2n3Isup5LZ0L');background-position:center;"></div>
+          <div class="hero-slide-col" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuCnvTInAghqFFJvKXTnPeUwMcRuXNevffr2BU8DD9csN_Em5xRCiTAqC7j4tvsgeB2Hru0iUZMe-uLsSoxL_Fk-7rxNMg1EGnMg6Omdv69VWIyjIi2b1qL2jSqkYzIB4NmqU3NvrMhBXdVkMD5D6WS0Lzeo6oedNdWDZvNXpW6q4GFYROwyEjVlp3KZua3LV5U2LTM3q2YFtpFEk-BQV6OgtQpOJWuX2AN0G_rN3R5zspnnHmzcG2s67ikgm4S9A9rt2n3Isup5LZ0L');background-position:right center;"></div>
         </div>
-    </section>
+      </div>
 
-    <!-- ═══════════════════════════════════════
-         STATS
-    ═══════════════════════════════════════ -->
-    <section id="stats" class="stats">
-        <div class="stats-inner">
-            <div class="stat-item" data-reveal>
-                <span class="stat-number">3</span>
-                <span class="stat-label">Projects</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item" data-reveal data-delay="1">
-                <span class="stat-number">~9.8B</span>
-                <span class="stat-label">EGP Project Value</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item" data-reveal data-delay="2">
-                <span class="stat-number">2</span>
-                <span class="stat-label">Automation Tools Built</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item" data-reveal data-delay="3">
-                <span class="stat-number">200+</span>
-                <span class="stat-label">Coordinated Drawings</span>
-            </div>
+      <!-- Slide 2: Analytics / Data dashboard -->
+      <div class="hero-slide" data-slide="2">
+        <div class="hero-slide-cols">
+          <div class="hero-slide-col" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuCSFYAdW-fftTH16n-x5sEuMwc7wJOCL4AnElhcyHvyRzE0EEfGJIgqTMe5uEgUQtz5dtarVrEJJ9a0-Bk6OGO9pgcdEI-GnWvBLF1OC7b6f95wbOceh1sw1Db6ce8MhtgkI0vLmZQyhAqXIxe6W_WZyUq7D-7uWXi-TMIOpyVfZntg_AqfxnX7BCXsQ_wUo8m7k_bx-MNGl2Lznz0MIegYNY94gWZFmVcEHGNvTp3K5vGGdJ97fk1UM88ZD9SLCghIh62VOFoidUVI');background-position:left center;"></div>
+          <div class="hero-slide-col" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuCSFYAdW-fftTH16n-x5sEuMwc7wJOCL4AnElhcyHvyRzE0EEfGJIgqTMe5uEgUQtz5dtarVrEJJ9a0-Bk6OGO9pgcdEI-GnWvBLF1OC7b6f95wbOceh1sw1Db6ce8MhtgkI0vLmZQyhAqXIxe6W_WZyUq7D-7uWXi-TMIOpyVfZntg_AqfxnX7BCXsQ_wUo8m7k_bx-MNGl2Lznz0MIegYNY94gWZFmVcEHGNvTp3K5vGGdJ97fk1UM88ZD9SLCghIh62VOFoidUVI');background-position:center;"></div>
+          <div class="hero-slide-col" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuCSFYAdW-fftTH16n-x5sEuMwc7wJOCL4AnElhcyHvyRzE0EEfGJIgqTMe5uEgUQtz5dtarVrEJJ9a0-Bk6OGO9pgcdEI-GnWvBLF1OC7b6f95wbOceh1sw1Db6ce8MhtgkI0vLmZQyhAqXIxe6W_WZyUq7D-7uWXi-TMIOpyVfZntg_AqfxnX7BCXsQ_wUo8m7k_bx-MNGl2Lznz0MIegYNY94gWZFmVcEHGNvTp3K5vGGdJ97fk1UM88ZD9SLCghIh62VOFoidUVI');background-position:right center;"></div>
         </div>
-    </section>
+      </div>
 
-    <!-- ═══════════════════════════════════════
-         PILLARS
-    ═══════════════════════════════════════ -->
-    <section id="pillars" class="pillars">
-        <div class="container">
-            <p class="section-label" data-reveal>// expertise</p>
-            <h2 class="section-title" data-reveal data-delay="1">Three Core Competencies</h2>
-            <div class="pillars-grid">
-
-                <!-- Pillar 1: Shop Drawing -->
-                <div class="pillar-card" data-reveal>
-                    <div class="pillar-icon">
-                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="3" y="3" width="30" height="30" rx="1" stroke="#00c8ff" stroke-width="1.5"/>
-                            <line x1="3" y1="10" x2="33" y2="10" stroke="#00c8ff" stroke-width="1.5"/>
-                            <line x1="10" y1="10" x2="10" y2="33" stroke="#00c8ff" stroke-width="1.5"/>
-                            <line x1="15" y1="16" x2="28" y2="16" stroke="#00c8ff" stroke-width="1"/>
-                            <line x1="15" y1="20" x2="26" y2="20" stroke="#00c8ff" stroke-width="1"/>
-                            <line x1="15" y1="24" x2="23" y2="24" stroke="#00c8ff" stroke-width="1"/>
-                            <rect x="15" y="27" width="13" height="4" stroke="#00c8ff" stroke-width="0.75"/>
-                        </svg>
-                    </div>
-                    <h3 class="pillar-title">Shop Drawing<br>Coordination</h3>
-                    <ul class="pillar-list">
-                        <li>MEP &amp; structural clash resolution</li>
-                        <li>Multi-discipline duct routing</li>
-                        <li>200+ drawings across commercial towers</li>
-                        <li>Full review and approval workflows</li>
-                    </ul>
-                    <div class="pillar-tag">AutoCAD &middot; Revit &middot; ASD</div>
-                </div>
-
-                <!-- Pillar 2: BIM Automation (Featured) -->
-                <div class="pillar-card pillar-card--featured" data-reveal data-delay="1">
-                    <div class="pillar-icon">
-                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <polyline points="14,8 7,18 14,28" stroke="#00c8ff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                            <polyline points="22,8 29,18 22,28" stroke="#00c8ff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                            <line x1="20" y1="6" x2="16" y2="30" stroke="#00c8ff" stroke-width="1.5" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <h3 class="pillar-title">BIM Automation<br>&amp; Scripting</h3>
-                    <ul class="pillar-list">
-                        <li>PyRevit Python add-on development</li>
-                        <li>Automated QTO with Excel export</li>
-                        <li>Room finish auto-assignment scripts</li>
-                        <li>Model-to-deliverable workflow automation</li>
-                    </ul>
-                    <div class="pillar-tag">Python &middot; PyRevit &middot; Revit API</div>
-                </div>
-
-                <!-- Pillar 3: Analytics -->
-                <div class="pillar-card" data-reveal data-delay="2">
-                    <div class="pillar-icon">
-                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="4" y="26" width="6" height="6" rx="0.5" stroke="#00c8ff" stroke-width="1.5"/>
-                            <rect x="15" y="20" width="6" height="12" rx="0.5" stroke="#00c8ff" stroke-width="1.5"/>
-                            <rect x="26" y="13" width="6" height="19" rx="0.5" stroke="#00c8ff" stroke-width="1.5"/>
-                            <line x1="4" y1="32" x2="32" y2="32" stroke="#00c8ff" stroke-width="1"/>
-                            <polyline points="7,24 18,17 29,11" stroke="#00c8ff" stroke-width="1" stroke-dasharray="2,2" fill="none"/>
-                        </svg>
-                    </div>
-                    <h3 class="pillar-title">Technical Analytics<br>&amp; Data Reporting</h3>
-                    <ul class="pillar-list">
-                        <li>Power BI cost element dashboards</li>
-                        <li>BOQ preparation and QTO accuracy</li>
-                        <li>IPC preparation &amp; invoice auditing</li>
-                        <li>Variation order documentation</li>
-                    </ul>
-                    <div class="pillar-tag">Power BI &middot; Excel &middot; Primavera</div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════
-         SELECTED WORK
-    ═══════════════════════════════════════ -->
-    <section id="work">
-
-        <header class="work-header">
-            <span class="section-label">// selected work</span>
-            <div class="tabs" id="tabs">
-                <button class="tab active" data-cat="shop">Shop Drawing</button>
-                <button class="tab"        data-cat="analytics">Project Control</button>
-                <button class="tab"        data-cat="bim">BIM Automation</button>
-            </div>
-        </header>
-
-        <div class="carousel-wrap" id="carouselWrap">
-            <div class="carousel-track" id="track"></div>
-
-            <button class="arrow arrow-prev" id="prev" aria-label="Previous slide">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2.2"
-                     stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="15 18 9 12 15 6"/>
-                </svg>
-            </button>
-
-            <button class="arrow arrow-next" id="next" aria-label="Next slide">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2.2"
-                     stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="9 18 15 12 9 6"/>
-                </svg>
-            </button>
-        </div>
-
-        <footer class="carousel-foot">
-            <div class="dots" id="dots"></div>
-            <span class="slide-counter" id="counter">01 / 01</span>
-        </footer>
-
-    </section>
-
-    <!-- ═══════════════════════════════════════
-         STACK
-    ═══════════════════════════════════════ -->
-    <section id="stack" class="stack">
-        <div class="container">
-            <p class="section-label" data-reveal>// tools &amp; stack</p>
-            <h2 class="section-title" data-reveal data-delay="1">What I Work With</h2>
-            <div class="stack-grid">
-                <div class="stack-group" data-reveal>
-                    <p class="stack-group-label">BIM &amp; CAD</p>
-                    <div class="stack-items">
-                        <div class="stack-item">AutoCAD</div>
-                        <div class="stack-item">Revit</div>
-                        <div class="stack-item">Civil 3D</div>
-                    </div>
-                </div>
-                <div class="stack-group" data-reveal data-delay="1">
-                    <p class="stack-group-label">Automation</p>
-                    <div class="stack-items">
-                        <div class="stack-item">Dynamo Script</div>
-                        <div class="stack-item">PyRevit</div>
-                        <div class="stack-item">Revit API</div>
-                    </div>
-                </div>
-                <div class="stack-group" data-reveal data-delay="2">
-                    <p class="stack-group-label">Analytics</p>
-                    <div class="stack-items">
-                        <div class="stack-item">Power BI</div>
-                        <div class="stack-item">Excel</div>
-                    </div>
-                </div>
-                <div class="stack-group" data-reveal data-delay="3">
-                    <p class="stack-group-label">Project Management</p>
-                    <div class="stack-items">
-                        <div class="stack-item">Primavera P6</div>
-                        <div class="stack-item">Office 365</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════
-         ABOUT
-    ═══════════════════════════════════════ -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-inner" data-reveal>
-                <div class="about-label-col">
-                    <p class="section-label">// about</p>
-                    <div class="about-accent-line"></div>
-                </div>
-                <div class="about-text-col">
-                    <p class="about-text">I'm a BIM Engineer operating at the intersection of modeling and commercial construction — using Revit-based BIM not just as a design tool, but as the data source for quantity take-offs, BOQ preparation, variation orders, and invoice verification.</p>
-                    <p class="about-text">I bring model auditing, drawing control, and code compliance into the same workflow, and I build the automation layer on top: Dynamo scripts that eliminate manual bottlenecks and Power BI dashboards that turn model data into commercial reporting</p>
-                    <p class="about-text">The result is BIM output that's accurate, coordinated, and execution-ready — not just visually complete.</p>
-                    <div class="about-badges">
-                        <span class="badge">Cairo University</span>
-                        <span class="badge">Civil Engineering</span>
-                        <span class="badge">Egypt &middot; MENA Region</span>
-                        <span class="badge">Open to Freelance</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════
-         CONTACT
-    ═══════════════════════════════════════ -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <p class="section-label" data-reveal>// contact</p>
-            <h2 class="contact-title" data-reveal data-delay="1">Open to<br>Opportunities.</h2>
-            <p class="contact-sub" data-reveal data-delay="2">Technical office roles, BIM automation projects,<br>and freelance engagements.</p>
-            <div class="contact-links" data-reveal data-delay="3">
-                <a href="mailto:nooor.walid@gmail.com" class="btn-primary">Email Me</a>
-                <a href="https://www.linkedin.com/in/nour-waleed-09965a204" target="_blank" rel="noopener" class="btn-outline">LinkedIn</a>
-                <a href="Nour Eldin Waleed - CV.pdf" target="_blank" class="btn-ghost">Download CV</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════
-         FOOTER
-    ═══════════════════════════════════════ -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-inner">
-                <p class="footer-name">
-                    Nour Eldin Waleed Muhammed
-                    <span class="accent">&middot;</span>
-                    Technical Office Engineer
-                </p>
-                <p class="footer-right">
-                    &copy; 2026 <span class="accent">&middot;</span> Cairo, Egypt
-                </p>
-            </div>
-        </div>
-    </footer>
-
-
-    <!-- ═══════════════════════════════════════
-         MODAL LIGHTBOX
-    ═══════════════════════════════════════ -->
-    <div class="modal-backdrop" id="modalBackdrop"></div>
-
-    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Project detail">
-        <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
-
-        <div class="modal-inner">
-
-            <!-- Left: project details -->
-            <div class="modal-left">
-                <span class="modal-cat   modal-animate" id="mCat"></span>
-                <h2   class="modal-title modal-animate" id="mTitle"></h2>
-                <p    class="modal-desc  modal-animate" id="mDesc"></p>
-                <div  class="modal-stats modal-animate" id="mStats"></div>
-                <div  class="modal-tags  modal-animate" id="mTags"></div>
-                <a    class="modal-pdf   modal-animate" id="mPdf" target="_blank" rel="noopener">View PDF &#8599;</a>
-            </div>
-
-            <!-- Right: photos -->
-            <div class="modal-right">
-                <div class="modal-photo-wrap">
-                    <div class="modal-photo-main" id="mPhotoMain">
-                        <span  class="modal-photo-label"   id="mPhotoLabel"></span>
-                        <button class="modal-photo-arrow modal-photo-prev" id="mPhotoPrev" aria-label="Previous photo">&#8249;</button>
-                        <button class="modal-photo-arrow modal-photo-next" id="mPhotoNext" aria-label="Next photo">&#8250;</button>
-                        <span  class="modal-photo-counter" id="mPhotoCounter">01 / 04</span>
-                    </div>
-                </div>
-                <div class="modal-thumbs" id="mThumbs"></div>
-            </div>
-
-        </div>
     </div>
 
-    <script type="module">
-    import * as THREE from 'three';
-
-    /* ════════════════════════════════════════════
-       THREE.JS HERO — BIM TOWER IN SPACE
-    ════════════════════════════════════════════ */
-    (function initHero3D() {
-        const container = document.getElementById('hero-3d');
-        const W = window.innerWidth;
-        const H = window.innerHeight;
-
-        const scene = new THREE.Scene();
-        scene.fog = new THREE.FogExp2(0x080808, 0.020);
-
-        const camera = new THREE.PerspectiveCamera(55, W / H, 0.1, 200);
-        camera.position.set(-1, 3, 17);
-        camera.lookAt(2, 2.5, 0);
-
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        renderer.setSize(W, H);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
-        renderer.setClearColor(0x000000, 0);
-        renderer.outputColorSpace = THREE.SRGBColorSpace;
-        container.appendChild(renderer.domElement);
-
-        const CYAN = 0x00c8ff;
-
-        /* ── Main tower ── */
-        const buildingGroup = new THREE.Group();
-        const FLOOR_COUNT = 20;
-        const FLOOR_H     = 0.45;
-        const FLOOR_GAP   = 0.08;
-        const STEP        = FLOOR_H + FLOOR_GAP;
-        const TOWER_W     = 4.2;
-        const TOWER_D     = 2.6;
-
-        for (let i = 0; i < FLOOR_COUNT; i++) {
-            const t   = i / (FLOOR_COUNT - 1);
-            const geo = new THREE.BoxGeometry(TOWER_W - t * 0.4, FLOOR_H, TOWER_D - t * 0.2);
-            const seg = new THREE.LineSegments(
-                new THREE.EdgesGeometry(geo),
-                new THREE.LineBasicMaterial({ color: CYAN, transparent: true, opacity: 0.07 + t * 0.16 })
-            );
-            seg.position.y = i * STEP;
-            buildingGroup.add(seg);
-        }
-
-        /* ── Corner columns ── */
-        const totalH = FLOOR_COUNT * STEP;
-        [[-TOWER_W / 2, -TOWER_D / 2], [TOWER_W / 2, -TOWER_D / 2],
-         [-TOWER_W / 2,  TOWER_D / 2], [TOWER_W / 2,  TOWER_D / 2]].forEach(([cx, cz]) => {
-            const pts = [new THREE.Vector3(cx, -0.1, cz), new THREE.Vector3(cx, totalH + 0.1, cz)];
-            const col = new THREE.Line(
-                new THREE.BufferGeometry().setFromPoints(pts),
-                new THREE.LineBasicMaterial({ color: CYAN, transparent: true, opacity: 0.38 })
-            );
-            buildingGroup.add(col);
-        });
-
-        /* ── Horizontal cross-braces every 4 floors ── */
-        for (let i = 0; i < FLOOR_COUNT; i += 4) {
-            const y = i * STEP + FLOOR_H / 2;
-            const pts = [
-                new THREE.Vector3(-TOWER_W / 2, y, -TOWER_D / 2),
-                new THREE.Vector3( TOWER_W / 2, y,  TOWER_D / 2),
-            ];
-            buildingGroup.add(new THREE.Line(
-                new THREE.BufferGeometry().setFromPoints(pts),
-                new THREE.LineBasicMaterial({ color: CYAN, transparent: true, opacity: 0.07 })
-            ));
-        }
-
-        /* ── Secondary tower ── */
-        const tower2 = new THREE.Group();
-        const T2 = 13;
-        for (let i = 0; i < T2; i++) {
-            const t   = i / (T2 - 1);
-            const geo = new THREE.BoxGeometry(2.9 - t * 0.2, FLOOR_H, 2.0);
-            const seg = new THREE.LineSegments(
-                new THREE.EdgesGeometry(geo),
-                new THREE.LineBasicMaterial({ color: CYAN, transparent: true, opacity: 0.05 + t * 0.10 })
-            );
-            seg.position.y = i * STEP;
-            tower2.add(seg);
-        }
-        /* columns for tower2 */
-        [[-1.45, -1], [1.45, -1], [-1.45, 1], [1.45, 1]].forEach(([cx, cz]) => {
-            const pts = [new THREE.Vector3(cx, 0, cz), new THREE.Vector3(cx, T2 * STEP, cz)];
-            tower2.add(new THREE.Line(
-                new THREE.BufferGeometry().setFromPoints(pts),
-                new THREE.LineBasicMaterial({ color: CYAN, transparent: true, opacity: 0.28 })
-            ));
-        });
-        tower2.position.set(-4.5, 0, -0.5);
-        buildingGroup.add(tower2);
-
-        /* ── Third small tower (background depth) ── */
-        const tower3 = new THREE.Group();
-        for (let i = 0; i < 8; i++) {
-            const geo = new THREE.BoxGeometry(2.0, FLOOR_H, 1.5);
-            const seg = new THREE.LineSegments(
-                new THREE.EdgesGeometry(geo),
-                new THREE.LineBasicMaterial({ color: CYAN, transparent: true, opacity: 0.03 + (i / 7) * 0.05 })
-            );
-            seg.position.y = i * STEP;
-            tower3.add(seg);
-        }
-        tower3.position.set(2.8, -2, -5.5);
-        buildingGroup.add(tower3);
-
-        buildingGroup.position.set(3, -4.5, -3);
-        scene.add(buildingGroup);
-
-        /* ── Ground grid plane ── */
-        const GRID_SIZE = 50, DIVS = 25;
-        const gStep = GRID_SIZE / DIVS;
-        const gVerts = [];
-        for (let i = 0; i <= DIVS; i++) {
-            const p = -GRID_SIZE / 2 + i * gStep;
-            gVerts.push(-GRID_SIZE / 2, 0, p,  GRID_SIZE / 2, 0, p);
-            gVerts.push(p, 0, -GRID_SIZE / 2,  p, 0, GRID_SIZE / 2);
-        }
-        const gGeo = new THREE.BufferGeometry();
-        gGeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(gVerts), 3));
-        const gridMesh = new THREE.LineSegments(gGeo,
-            new THREE.LineBasicMaterial({ color: CYAN, transparent: true, opacity: 0.032 })
-        );
-        gridMesh.position.set(3, -4.6, -3);
-        scene.add(gridMesh);
-
-        /* ── Particles (structural data nodes) ── */
-        const P_COUNT = 750;
-        const pPos = new Float32Array(P_COUNT * 3);
-        for (let i = 0; i < P_COUNT; i++) {
-            pPos[i * 3]     = (Math.random() - 0.5) * 70;
-            pPos[i * 3 + 1] = (Math.random() - 0.5) * 50;
-            pPos[i * 3 + 2] = (Math.random() - 0.5) * 60 - 15;
-        }
-        const pGeo = new THREE.BufferGeometry();
-        pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
-        const particles = new THREE.Points(pGeo,
-            new THREE.PointsMaterial({ color: CYAN, size: 0.055, transparent: true, opacity: 0.38, sizeAttenuation: true })
-        );
-        scene.add(particles);
-
-        /* ── Secondary large particle layer (background ambience) ── */
-        const P2 = 200;
-        const pPos2 = new Float32Array(P2 * 3);
-        for (let i = 0; i < P2; i++) {
-            pPos2[i * 3]     = (Math.random() - 0.5) * 100;
-            pPos2[i * 3 + 1] = (Math.random() - 0.5) * 80;
-            pPos2[i * 3 + 2] = -30 - Math.random() * 60;
-        }
-        const pGeo2 = new THREE.BufferGeometry();
-        pGeo2.setAttribute('position', new THREE.BufferAttribute(pPos2, 3));
-        const particles2 = new THREE.Points(pGeo2,
-            new THREE.PointsMaterial({ color: 0x0066aa, size: 0.1, transparent: true, opacity: 0.2, sizeAttenuation: true })
-        );
-        scene.add(particles2);
-
-        /* ── Mouse parallax ── */
-        let tX = 0, tY = 0, cX = 0, cY = 0;
-        window.addEventListener('mousemove', e => {
-            tX = (e.clientX / window.innerWidth  - 0.5) * 2;
-            tY = (e.clientY / window.innerHeight - 0.5) * 2;
-        });
-
-        /* ── Resize ── */
-        window.addEventListener('resize', () => {
-            const nW = window.innerWidth, nH = window.innerHeight;
-            camera.aspect = nW / nH;
-            camera.updateProjectionMatrix();
-            renderer.setSize(nW, nH);
-        });
-
-        /* ── Animation loop ── */
-        const clock = new THREE.Clock();
-        renderer.setAnimationLoop(() => {
-            const t = clock.getElapsedTime();
-
-            cX += (tX - cX) * 0.025;
-            cY += (tY - cY) * 0.025;
-            camera.position.x = -1 + cX * 2.0;
-            camera.position.y = 3.0 - cY * 1.2;
-            camera.lookAt(2, 2.5, 0);
-
-            buildingGroup.rotation.y = t * 0.045;
-            particles.rotation.y     = t * 0.016;
-            particles.rotation.x     = Math.sin(t * 0.04) * 0.04;
-            particles2.rotation.y    = -t * 0.008;
-
-            renderer.render(scene, camera);
-        });
-    })();
-
-    /* ════════════════════════════════════════════
-       SCROLL REVEAL — IntersectionObserver
-    ════════════════════════════════════════════ */
-    const revealObs = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-revealed');
-                revealObs.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
-
-    document.querySelectorAll('[data-reveal]').forEach(el => revealObs.observe(el));
-
-    /* ════════════════════════════════════════════
-       3D CARD TILT — mouse-driven perspective
-    ════════════════════════════════════════════ */
-    document.querySelectorAll('.pillar-card').forEach(card => {
-        card.addEventListener('mousemove', e => {
-            const r = card.getBoundingClientRect();
-            const x = ((e.clientX - r.left)  / r.width  - 0.5) * 2;
-            const y = ((e.clientY - r.top)   / r.height - 0.5) * 2;
-            card.style.transform = `perspective(700px) rotateX(${-y * 6}deg) rotateY(${x * 6}deg) translateZ(12px)`;
-        });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(700px) rotateX(0deg) rotateY(0deg) translateZ(0)';
-        });
-    });
-
-    /* ════════════════════════════════════════════
-       REVIT BIM CANVAS — animated isometric building per slide
-    ════════════════════════════════════════════ */
-    function animateSlideBackground(slide, cat) {
-        const canvas = document.createElement('canvas');
-        canvas.className = 'slide-bim-canvas';
-
-        // Insert between slide-bg and slide-pattern so gradient fades it naturally
-        const pattern = slide.querySelector('.slide-pattern');
-        slide.insertBefore(canvas, pattern);
-
-        function resize() {
-            canvas.width  = Math.round(slide.offsetWidth  * 0.62) || 700;
-            canvas.height = Math.round(slide.offsetHeight)        || 420;
-        }
-        resize();
-
-        const ctx = canvas.getContext('2d');
-
-        // Per-category palette
-        const pal = {
-            shop:      { r: 0,   g: 200, b: 255, ra: 0,   ga: 140, ba: 255 },
-            analytics: { r: 0,   g: 210, b: 110, ra: 0,   ga: 255, ba: 170 },
-            bim:       { r: 220, g: 75,  b: 75,  ra: 255, ga: 150, ba: 50  },
-        }[cat] || { r: 0, g: 200, b: 255, ra: 0, ga: 140, ba: 255 };
-        const { r, g, b, ra, ga, ba } = pal;
-
-        function rgba(R, G, B, a) { return `rgba(${R},${G},${B},${a.toFixed(3)})`; }
-
-        // Building dimensions
-        const FLOORS = 6, BW = 10, BD = 7, STORY = 2.5;
-
-        // Isometric helpers — recalculated on every frame in case canvas resized
-        function iso(x, y, z) {
-            const sc = canvas.width * 0.030;
-            const ox = canvas.width  * 0.38;
-            const oy = canvas.height * 0.68;
-            return {
-                x: ox + (x - z) * sc * 0.866,
-                y: oy - y * sc  + (x + z) * sc * 0.5,
-            };
-        }
-
-        function seg(x1,y1,z1, x2,y2,z2, color, lw) {
-            const a = iso(x1,y1,z1), b = iso(x2,y2,z2);
-            ctx.beginPath();
-            ctx.strokeStyle = color;
-            ctx.lineWidth   = lw || 1;
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.stroke();
-        }
-
-        // ── Floor slab ──
-        function drawFloor(f, op) {
-            const y = f * STORY;
-            const c = rgba(r,g,b, op);
-            seg(0,y,0,  BW,y,0,  c);
-            seg(BW,y,0, BW,y,BD, c);
-            seg(BW,y,BD, 0,y,BD, c);
-            seg(0,y,BD,  0,y,0,  c);
-            // Partitions
-            const cp = rgba(r,g,b, op * 0.28);
-            seg(0,y,BD/2, BW,y,BD/2, cp);
-            [BW/3, 2*BW/3].forEach(xp => seg(xp,y,0, xp,y,BD, cp));
-        }
-
-        // ── Columns ──
-        function drawColumns(prog) {
-            const xs = [0, BW/3, 2*BW/3, BW];
-            const zs = [0, BD/2, BD];
-            const topY = (FLOORS-1) * STORY * prog;
-            xs.forEach(cx => zs.forEach(cz => {
-                seg(cx,0,cz, cx,topY,cz, rgba(255,255,255, 0.42*prog), 0.9);
-            }));
-        }
-
-        // ── Beams at each floor ──
-        function drawBeams(f, op) {
-            const y = f * STORY;
-            const c = rgba(r,g,b, op * 0.55);
-            const xs = [0, BW/3, 2*BW/3, BW];
-            const zs = [0, BD/2, BD];
-            zs.forEach(cz => seg(0,y,cz, BW,y,cz, c, 1.1));
-            xs.forEach(cx => seg(cx,y,0, cx,y,BD,  c, 1.1));
-        }
-
-        // ── Glowing node dots at column-floor intersections ──
-        function drawNodes(op, t) {
-            const xs = [0, BW/3, 2*BW/3, BW];
-            const zs = [0, BD/2, BD];
-            for (let f = 0; f < FLOORS; f++) {
-                const y = f * STORY;
-                xs.forEach((cx,ci) => zs.forEach((cz,zi) => {
-                    const phase = (ci*3+zi)*7 + f*11;
-                    const pulse = 0.35 + 0.30 * Math.sin(t * 0.065 + phase);
-                    const p = iso(cx, y, cz);
-                    ctx.beginPath();
-                    ctx.arc(p.x, p.y, 1.8, 0, Math.PI*2);
-                    ctx.fillStyle = rgba(r,g,b, op * pulse);
-                    ctx.fill();
-                }));
-            }
-        }
-
-        // ── MEP Duct routing (Shop Drawing) ──
-        function drawMEP(op) {
-            const ductColor  = rgba(ra,ga,ba, op);
-            const branchColor= rgba(ra,ga,ba, op * 0.6);
-            const riserColor = rgba(ra,ga,ba, op * 0.4);
-            const y1 = STORY * 1 + 1.4;
-            const y2 = STORY * 3 + 1.4;
-            // Main trunk
-            seg(0.5, y1, BD/2, BW-0.5, y1, BD/2, ductColor, 2.2);
-            // Branch ducts
-            [BW/3, 2*BW/3].forEach(xp => seg(xp, y1, 0.5, xp, y1, BD-0.5, branchColor, 1.8));
-            // Second trunk
-            seg(1, y2, 1, BW-1, y2, 1, rgba(ra,ga,ba, op*0.45), 1.8);
-            // Riser
-            seg(BW/2, STORY*0.5, BD/2, BW/2, STORY*3.5, BD/2, riserColor, 1.2);
-
-            // Duct end caps (small squares)
-            [[0.5, y1, BD/2], [BW-0.5, y1, BD/2]].forEach(([x,y,z]) => {
-                const p = iso(x,y,z);
-                ctx.strokeStyle = ductColor;
-                ctx.lineWidth = 1;
-                ctx.strokeRect(p.x - 3, p.y - 3, 6, 6);
-            });
-        }
-
-        // ── Data bars rising (Analytics) ──
-        function drawDataBars(op, t) {
-            const barVals = [0.60, 0.88, 0.45, 0.94, 0.72, 0.55];
-            const maxH = 5.5;
-            const prog = Math.min(1, t * 0.018);
-            barVals.forEach((val, i) => {
-                const bx = 0.8 + i * 1.52;
-                const bz = BD * 0.48;
-                const bH = val * maxH * prog;
-                if (bH < 0.05) return;
-                const tc = rgba(ra,ga,ba, op * val);
-                const sc2= rgba(ra,ga,ba, op * val * 0.35);
-                // Top face
-                seg(bx,bH,bz, bx+0.7,bH,bz,   tc, 1.2);
-                seg(bx+0.7,bH,bz, bx+0.7,bH,bz+0.7, tc, 1.2);
-                seg(bx+0.7,bH,bz+0.7, bx,bH,bz+0.7, tc, 1.2);
-                seg(bx,bH,bz+0.7, bx,bH,bz,    tc, 1.2);
-                // Vertical edges
-                seg(bx,0,bz, bx,bH,bz, sc2);
-                seg(bx+0.7,0,bz, bx+0.7,bH,bz, sc2);
-            });
-        }
-
-        // ── BIM element selection highlight (BIM Automation) ──
-        function drawBIMSelect(op, t) {
-            const pulse = 0.55 + 0.45 * Math.sin(t * 0.07);
-            // Selected columns (orange)
-            [BW/3, 2*BW/3].forEach(cx => {
-                seg(cx,0,BD/2, cx,(FLOORS-1)*STORY,BD/2, rgba(ra,ga,ba, op*pulse*0.75), 2.2);
-            });
-            // Selected slab (cyan, brighter)
-            const sy = 2 * STORY;
-            const sc3= rgba(r,g,b, op*pulse*0.55);
-            seg(0,sy,0, BW,sy,0, sc3, 2.5);
-            seg(BW,sy,0, BW,sy,BD, sc3, 2.5);
-            seg(BW,sy,BD, 0,sy,BD, sc3, 2.5);
-            seg(0,sy,BD, 0,sy,0, sc3, 2.5);
-            // Parameter labels (dots)
-            const cp = iso(BW/3, FLOORS*STORY*0.5, BD/2);
-            ctx.fillStyle = rgba(ra,ga,ba, op*0.8*pulse);
-            [0, 14, 28].forEach(dy => {
-                ctx.beginPath();
-                ctx.arc(cp.x + 22, cp.y - 10 + dy, 2.5, 0, Math.PI*2);
-                ctx.fill();
-            });
-            // Connecting tick lines
-            ctx.strokeStyle = rgba(ra,ga,ba, op*0.3*pulse);
-            ctx.lineWidth = 0.7;
-            [0, 14, 28].forEach(dy => {
-                ctx.beginPath();
-                ctx.moveTo(cp.x + 4, cp.y - 10 + dy);
-                ctx.lineTo(cp.x + 18, cp.y - 10 + dy);
-                ctx.stroke();
-            });
-        }
-
-        // ── Animation loop ──
-        let T = 0;
-        const PHASE_FLOOR = 10;  // frames per floor
-        const PHASE_COLS  = FLOORS * PHASE_FLOOR + 5;
-        const PHASE_EXTRA = PHASE_COLS + 30;
-
-        function loop() {
-            if (!document.body.contains(canvas)) return;
-            T++;
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            // Draw floors bottom-up with staggered reveal
-            for (let f = 0; f < FLOORS; f++) {
-                const prog = Math.min(1, Math.max(0, (T - f * PHASE_FLOOR) / PHASE_FLOOR));
-                if (prog <= 0) continue;
-                drawFloor(f, 0.08 + (f/(FLOORS-1)) * 0.12 + prog * 0.04);
-                if (prog >= 0.7) drawBeams(f, prog);
-            }
-
-            // Columns
-            if (T > PHASE_COLS) drawColumns(Math.min(1, (T - PHASE_COLS) / 30));
-
-            // Column node dots
-            if (T > PHASE_COLS + 15) {
-                drawNodes(Math.min(1, (T - PHASE_COLS - 15) / 20), T);
-            }
-
-            // Category-specific elements
-            if (T > PHASE_EXTRA) {
-                const op = Math.min(0.8, (T - PHASE_EXTRA) / 22);
-                if (cat === 'shop')      drawMEP(op);
-                else if (cat === 'analytics') drawDataBars(op, T);
-                else if (cat === 'bim') drawBIMSelect(op, T);
-            }
-
-            requestAnimationFrame(loop);
-        }
-        loop();
-    }
-
-    /* ════════════════════════════════════════════
-       CAROUSEL DATA  (real project content)
-       bg: solid colour — pattern overlay added by CSS per data-cat
-    ════════════════════════════════════════════ */
-    const DATA = {
-        shop: [
-            {
-                bg: '#060d1b',
-                title: 'Commercial Tower Shop Drawings',
-                desc: 'Full structural shop drawings for all structural elements with BBS',
-                fullDesc: 'Full MEP coordination for a 22-storey commercial tower in Cairo — routing HVAC ducts, electrical cable trays, and plumbing through structural bays across 11 occupied floors. All slab penetrations and beam clearances were pre-coordinated with the structural consultant before any RFI was raised on site.',
-                stats: [
-                    { value: '11',   label: 'Floors' },
-                    { value: '200+', label: 'Drawings' },
-                    { value: '0',    label: 'Site Clashes' }
-                ],
-                photos: [
-                    { src: 'photos/1.png',  fit: 'cover', label: 'Coordination Plan — L4' },
-                    { src: null, bg: '#071a35', fit: 'cover', label: 'HVAC Routing Detail' },
-                    { src: null, bg: '#091e3d', fit: 'cover', label: 'Clash Report Extract' },
-                    { src: null, bg: '#061220', fit: 'cover', label: 'Approved Submission' }
-                ],
-                tags: ['AutoCAD', 'Revit', 'ASD', '200+ Drawings']
-            },
-            {
-                bg: '#071525',
-                title: 'MEP Duct Routing &amp; Clash Resolution',
-                desc: 'Clash-free HVAC duct paths through structural beams and slab openings, approved by MEP consultant pre-execution.',
-                fullDesc: 'Designed clash-free HVAC duct paths through existing structural beams and slab openings for a mixed-use development. All routing was reviewed and signed off by the MEP consultant prior to fabrication — eliminating costly site modifications and reducing the RFI backlog to zero for this discipline package.',
-                stats: [
-                    { value: '3',    label: 'Disciplines' },
-                    { value: '100%', label: 'Pre-approved' },
-                    { value: '0',    label: 'RFIs Raised' }
-                ],
-                photos: [
-                    { src: null, bg: '#0b1a2e', fit: 'cover', label: 'Duct Layout — Plan' },
-                    { src: null, bg: '#081422', fit: 'cover', label: 'Section Through Beam' },
-                    { src: null, bg: '#0d2040', fit: 'cover', label: 'Isometric View' },
-                    { src: null, bg: '#09182e', fit: 'cover', label: 'Approval Stamp' }
-                ],
-                tags: ['AutoCAD', 'MEP Coordination', 'Clash Detection', 'ASD']
-            },
-            {
-                bg: '#050e1c',
-                title: 'Add Your Next Project Here',
-                desc: 'Replace this slide with your next shop drawing project.',
-                fullDesc: 'This is a placeholder for your next shop drawing project. Replace the title, description, stats, tags, and photos with your actual project content.',
-                stats: [
-                    { value: '—', label: 'Metric 1' },
-                    { value: '—', label: 'Metric 2' }
-                ],
-                photos: [
-                    { src: null, bg: '#0d1824', fit: 'cover', label: 'Photo 1' },
-                    { src: null, bg: '#0b1520', fit: 'cover', label: 'Photo 2' },
-                    { src: null, bg: '#0f1d2c', fit: 'cover', label: 'Photo 3' }
-                ],
-                tags: ['AutoCAD', 'Revit', 'Your Tags']
-            }
-        ],
-        analytics: [
-            {
-                bg: '#040c06',
-                title: 'Power BI Cost Element Dashboard',
-                desc: 'Cost breakdown per building element — structural, MEP, finishes — with real-time variance tracking for commercial oversight.',
-                fullDesc: 'A multi-page Power BI report breaking construction costs down by element category — structural, MEP, and architectural finishes. Includes budget vs. actual variance charts, earned value analysis, and drill-down to individual work packages. Connected directly to an Excel-based BOQ for real-time data refresh.',
-                stats: [
-                    { value: '5',    label: 'Report Pages' },
-                    { value: '12',   label: 'Cost Categories' },
-                    { value: 'Live', label: 'Data Refresh' }
-                ],
-                photos: [
-                    { src: 'photos/str-dashboard.png', fit: 'contain', label: 'Skeletal Cost Dashboard' },
-                    { src: 'photos/dashbaord.png',     fit: 'contain', label: 'Cost Breakdown by Discipline' },
-                    { src: null, bg: '#081e0e', fit: 'contain', label: 'Variance Chart' },
-                    { src: null, bg: '#051810', fit: 'contain', label: 'Work Package Drill' }
-                ],
-                tags: ['Power BI', 'Excel', 'BOQ Analytics', 'Cost Reporting']
-            },
-            {
-                bg: '#050f09',
-                title: 'IPC &amp; Payment Certificate Tracker',
-                desc: 'Tracks certified vs. claimed amounts across IPC cycles, reducing invoice dispute turnaround for the commercial team.',
-                fullDesc: 'Interactive Power BI tracker that maps certified vs. claimed amounts across all IPC cycles for the project. Flags disputed line items automatically, tracks consultant response times, and generates summary tables for the commercial manager\'s monthly progress review — cutting average dispute resolution time by 40%.',
-                stats: [
-                    { value: '8',      label: 'IPC Cycles' },
-                    { value: '40%',    label: 'Dispute Cut' },
-                    { value: '3 Days', label: 'Avg. Resolution' }
-                ],
-                photos: [
-                    { src: null, bg: '#051c0e', fit: 'contain', label: 'IPC Summary Page' },
-                    { src: null, bg: '#071a0c', fit: 'contain', label: 'Claimed vs Certified' },
-                    { src: null, bg: '#042010', fit: 'contain', label: 'Dispute Flag View' },
-                    { src: null, bg: '#06180e', fit: 'contain', label: 'Monthly Report' }
-                ],
-                tags: ['Power BI', 'IPC Preparation', 'Invoice Auditing', 'Excel']
-            }
-        ],
-        bim: [
-            {
-                bg: '#0f0303',
-                title: 'PyRevit QTO Automation Add-on',
-                desc: 'Extracts quantity takeoffs from the Revit model and auto-generates formatted Excel sheets — hours of work in seconds.',
-                fullDesc: 'A custom PyRevit add-on that extracts element quantities directly from the Revit model by category and type, then writes formatted quantity takeoff sheets to Excel — complete with grouped headers, subtotals, and unit conversions. Reduced QTO preparation time from two working days to under 10 minutes per model.',
-                stats: [
-                    { value: '10 min', label: 'Was 2 Days' },
-                    { value: '3+',     label: 'Element Types' },
-                    { value: '100%',   label: 'Model-Driven' }
-                ],
-                photos: [
-                    { src: null, bg: '#180808', fit: 'contain', label: 'Add-on Interface' },
-                    { src: null, bg: '#1c0606', fit: 'contain', label: 'Revit Model Input' },
-                    { src: null, bg: '#200a0a', fit: 'contain', label: 'Excel Output Sheet' },
-                    { src: null, bg: '#150606', fit: 'contain', label: 'QTO Summary' }
-                ],
-                tags: ['Python', 'PyRevit', 'Revit API', 'Excel Automation']
-            },
-            {
-                bg: '#0c0202',
-                title: 'Room Finish Auto-Assignment Script',
-                desc: 'Reads room function from the Revit model and auto-assigns floor, ceiling, and wall finish types across hundreds of rooms.',
-                fullDesc: 'A Revit API script that reads the Room Function parameter for every room in the model and automatically assigns the correct floor, wall, and ceiling finish types from a predefined finish schedule. Eliminated manual parameter assignment across 200+ rooms and ensured finish specifications stay consistent with the latest room schedule revision.',
-                stats: [
-                    { value: '200+', label: 'Rooms' },
-                    { value: '3',    label: 'Finish Layers' },
-                    { value: '0',    label: 'Manual Entries' }
-                ],
-                photos: [
-                    { src: null, bg: '#1a0606', fit: 'contain', label: 'Script Interface' },
-                    { src: null, bg: '#160808', fit: 'contain', label: 'Room Schedule Input' },
-                    { src: null, bg: '#1e080a', fit: 'contain', label: 'Finish Assignment' },
-                    { src: null, bg: '#180a0a', fit: 'contain', label: 'Output Verification' }
-                ],
-                tags: ['Python', 'PyRevit', 'Revit API', 'BIM Automation']
-            }
-        ]
-    };
-
-    /* ════════════════════════════════════════════
-       CAROUSEL ENGINE
-    ════════════════════════════════════════════ */
-    const track     = document.getElementById('track');
-    const dotsEl    = document.getElementById('dots');
-    const counterEl = document.getElementById('counter');
-    const prevBtn   = document.getElementById('prev');
-    const nextBtn   = document.getElementById('next');
-
-    let cat   = 'shop';
-    let index = 0;
-
-    function pad(n) { return String(n).padStart(2, '0'); }
-
-    const carouselWrap = document.getElementById('carouselWrap');
-
-    function doBuild(newCat) {
-        cat   = newCat;
-        index = 0;
-        track.innerHTML  = '';
-        dotsEl.innerHTML = '';
-
-        DATA[cat].forEach((s, i) => {
-            const slide = document.createElement('div');
-            slide.className   = 'slide';
-            slide.dataset.cat = newCat;
-            slide.dataset.idx = i;
-            slide.innerHTML = `
-                <div class="slide-bg" style="background:${s.bg};"></div>
-                <div class="slide-pattern"></div>
-                <div class="slide-gradient"></div>
-                <div class="slide-content">
-                    <h2 class="slide-title">${s.title}</h2>
-                    <p  class="slide-desc">${s.desc}</p>
-                    <button class="slide-view-btn" type="button">View Project &#8594;</button>
-                    <div class="slide-tags">
-                        ${s.tags.map(t => `<span class="slide-tag">${t}</span>`).join('')}
-                    </div>
-                </div>`;
-
-            track.appendChild(slide);
-            animateSlideBackground(slide, newCat);
-
-            const dot = document.createElement('button');
-            dot.className = 'dot' + (i === 0 ? ' active' : '');
-            dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
-            dot.addEventListener('click', () => goTo(i));
-            dotsEl.appendChild(dot);
-        });
-
-        refresh();
-    }
-
-    function build(newCat) {
-        if (newCat === cat) { doBuild(newCat); return; }
-        carouselWrap.classList.add('is-switching');
-        setTimeout(() => {
-            doBuild(newCat);
-            carouselWrap.classList.remove('is-switching');
-        }, 200);
-    }
-
-    function refresh() {
-        const total = DATA[cat].length;
-        track.style.transform = `translateX(calc(-100vw * ${index}))`;
-        dotsEl.querySelectorAll('.dot').forEach((d, i) =>
-            d.classList.toggle('active', i === index)
-        );
-        counterEl.textContent = `${pad(index + 1)} / ${pad(total)}`;
-        prevBtn.disabled = index === 0;
-        nextBtn.disabled = index === total - 1;
-    }
-
-    function goTo(n) {
-        index = Math.max(0, Math.min(n, DATA[cat].length - 1));
-        refresh();
-    }
-
-    prevBtn.addEventListener('click', () => goTo(index - 1));
-    nextBtn.addEventListener('click', () => goTo(index + 1));
-
-    document.getElementById('tabs').addEventListener('click', e => {
-        const btn = e.target.closest('.tab');
-        if (!btn) return;
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        btn.classList.add('active');
-        build(btn.dataset.cat);
-    });
-
-    document.addEventListener('keydown', e => {
-        if (modalIsOpen) {
-            if (e.key === 'ArrowLeft')  lockPhoto(Math.max(0, lockedPhotoIdx - 1));
-            if (e.key === 'ArrowRight') lockPhoto(Math.min(currentPhotos.length - 1, lockedPhotoIdx + 1));
-            if (e.key === 'Escape')     closeModal();
-            return;
-        }
-        if (e.key === 'ArrowLeft')  goTo(index - 1);
-        if (e.key === 'ArrowRight') goTo(index + 1);
-    });
-
-    let touchStartX = 0;
-    const wrap = document.getElementById('carouselWrap');
-    wrap.addEventListener('touchstart', e => {
-        touchStartX = e.touches[0].clientX;
-    }, { passive: true });
-    wrap.addEventListener('touchend', e => {
-        const diff = touchStartX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 48) goTo(diff > 0 ? index + 1 : index - 1);
-    }, { passive: true });
-
-    build('shop');
-
-    /* ════════════════════════════════════════════
-       TYPEWRITER
-    ════════════════════════════════════════════ */
-    const typeEl  = document.getElementById('typewriter');
-    const LABEL   = 'Technical Office Engineer_';
-    let   charIdx = 0;
-
-    function typeNext() {
-        typeEl.innerHTML = LABEL.slice(0, charIdx) + '<span class="cursor"></span>';
-        if (charIdx < LABEL.length) {
-            charIdx++;
-            setTimeout(typeNext, charIdx === 1 ? 900 : 55);
-        }
-    }
-    typeNext();
-
-    /* ════════════════════════════════════════════
-       MODAL ENGINE
-    ════════════════════════════════════════════ */
-    const modalBackdrop = document.getElementById('modalBackdrop');
-    const modalEl       = document.getElementById('modal');
-    const modalClose    = document.getElementById('modalClose');
-
-    let modalIsOpen    = false;
-    let lockedPhotoIdx = 0;
-    let currentPhotos  = [];
-
-    const CAT_LABELS = { shop: 'Shop Drawing', analytics: 'Project Control', bim: 'BIM Automation' };
-
-    function openModal(catKey, projIdx) {
-        const proj = DATA[catKey][projIdx];
-
-        document.getElementById('mCat').textContent  = CAT_LABELS[catKey];
-        document.getElementById('mTitle').innerHTML  = proj.title;
-        document.getElementById('mDesc').textContent = proj.fullDesc;
-
-        document.getElementById('mStats').innerHTML = proj.stats.map(s =>
-            `<div class="modal-stat">
-                <span class="modal-stat-value">${s.value}</span>
-                <span class="modal-stat-label">${s.label}</span>
-             </div>`
-        ).join('');
-
-        document.getElementById('mTags').innerHTML = proj.tags.map(t =>
-            `<span class="modal-tag">${t}</span>`
-        ).join('');
-
-        const pdfEl = document.getElementById('mPdf');
-        if (proj.pdf) { pdfEl.href = proj.pdf; pdfEl.style.display = ''; }
-        else           { pdfEl.style.display = 'none'; }
-
-        currentPhotos  = proj.photos;
-        lockedPhotoIdx = 0;
-        buildModalThumbs();
-        setMainPhoto(0);
-        updatePhotoCounter();
-
-        modalBackdrop.classList.add('is-open');
-        modalEl.classList.add('is-open');
-        document.body.classList.add('modal-open');
-        modalIsOpen = true;
-
-        const animEls = modalEl.querySelectorAll('.modal-animate');
-        animEls.forEach(el => el.classList.remove('animate-in'));
-        setTimeout(() => {
-            animEls.forEach((el, i) => {
-                setTimeout(() => el.classList.add('animate-in'), i * 60);
-            });
-        }, 420);
-    }
-
-    function closeModal() {
-        modalBackdrop.classList.remove('is-open');
-        modalEl.classList.remove('is-open');
-        setTimeout(() => {
-            document.body.classList.remove('modal-open');
-            modalIsOpen = false;
-        }, 280);
-    }
-
-    function buildModalThumbs() {
-        const strip = document.getElementById('mThumbs');
-        strip.innerHTML = currentPhotos.map((p, i) => {
-            const bgImage = p.src ? `background-image:url("${p.src}");` : '';
-            const bgColor = `background-color:${p.src ? '#0d0d0d' : p.bg};`;
-            return `<div class="modal-thumb ${i === 0 ? 'is-locked' : ''}"
-                         style="${bgImage}${bgColor}"
-                         data-idx="${i}">
-                        <span>${p.label}</span>
-                    </div>`;
-        }).join('');
-
-        strip.querySelectorAll('.modal-thumb').forEach(thumb => {
-            const idx = parseInt(thumb.dataset.idx, 10);
-            thumb.addEventListener('mouseenter', () => setMainPhoto(idx));
-            thumb.addEventListener('mouseleave', () => setMainPhoto(lockedPhotoIdx));
-            thumb.addEventListener('click',      () => lockPhoto(idx));
-        });
-    }
-
-    function setMainPhoto(idx) {
-        const photo  = currentPhotos[idx];
-        const mainEl = document.getElementById('mPhotoMain');
-
-        if (photo.src) {
-            mainEl.style.backgroundImage = `url("${photo.src}")`;
-            mainEl.style.backgroundColor = '#0d0d0d';
-        } else {
-            mainEl.style.backgroundImage = '';
-            mainEl.style.backgroundColor = photo.bg;
-        }
-
-        document.getElementById('mPhotoLabel').textContent = photo.label;
-        updatePhotoArrows(idx);
-    }
-
-    function lockPhoto(idx) {
-        lockedPhotoIdx = idx;
-        document.querySelectorAll('.modal-thumb').forEach((t, i) =>
-            t.classList.toggle('is-locked', i === idx)
-        );
-        setMainPhoto(idx);
-        updatePhotoCounter();
-    }
-
-    function updatePhotoCounter() {
-        document.getElementById('mPhotoCounter').textContent =
-            `${pad(lockedPhotoIdx + 1)} / ${pad(currentPhotos.length)}`;
-    }
-
-    function updatePhotoArrows(activeIdx) {
-        document.getElementById('mPhotoPrev').disabled = activeIdx === 0;
-        document.getElementById('mPhotoNext').disabled = activeIdx === currentPhotos.length - 1;
-    }
-
-    document.getElementById('mPhotoPrev').addEventListener('click', () => {
-        lockPhoto(Math.max(0, lockedPhotoIdx - 1));
-    });
-    document.getElementById('mPhotoNext').addEventListener('click', () => {
-        lockPhoto(Math.min(currentPhotos.length - 1, lockedPhotoIdx + 1));
-    });
-
-    modalClose.addEventListener('click', closeModal);
-    modalBackdrop.addEventListener('click', closeModal);
-
-    let photoTouchX = 0;
-    document.getElementById('mPhotoMain').addEventListener('touchstart', e => {
-        photoTouchX = e.touches[0].clientX;
-    }, { passive: true });
-    document.getElementById('mPhotoMain').addEventListener('touchend', e => {
-        const diff = photoTouchX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 40) lockPhoto(diff > 0
-            ? Math.min(currentPhotos.length - 1, lockedPhotoIdx + 1)
-            : Math.max(0, lockedPhotoIdx - 1)
-        );
-    }, { passive: true });
-
-    track.addEventListener('click', e => {
-        const btn = e.target.closest('.slide-view-btn');
-        if (!btn) return;
-        const slide = btn.closest('.slide');
-        openModal(slide.dataset.cat, parseInt(slide.dataset.idx, 10));
-    });
-    </script>
+    <!-- Dark gradient overlay -->
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- ── Hero content ── -->
+    <div class="hero-content">
+
+      <!-- Category pill -->
+      <div class="hero-pill">Technical Office &middot; BIM &middot; Automation</div>
+
+      <!-- Full name -->
+      <h1 class="hero-name">Nour Eldin Waleed</h1>
+
+      <!-- Typewriter roles -->
+      <div class="hero-typewriter" aria-live="polite" aria-atomic="true">
+        <span id="typewriter-text"></span><span class="typewriter-cursor cursor-blink" aria-hidden="true"></span>
+      </div>
+
+      <!-- QTO Counter block -->
+      <div class="counter-block" id="counterBlock">
+        <span class="counter-project-label" id="counter-project-label">01 — Architectural QTO</span>
+        <p class="counter-label-top" id="counter-label-top">QTO COMPLETION TIME</p>
+        <div class="counter-display">
+          <span id="counter-value">4h 00m</span>
+        </div>
+        <div class="counter-badges">
+          <span class="counter-badge counter-badge--red"  id="badge-manual">manual process</span>
+          <span class="counter-badge counter-badge--auto" id="badge-auto">&#10003; automated</span>
+        </div>
+        <div class="counter-bar">
+          <div class="counter-bar-fill" id="counter-bar-fill"></div>
+        </div>
+        <p class="counter-label-bottom" id="counter-label-bottom">QTO that used to take a full workday</p>
+        <div class="counter-progress-dots" id="counterDots">
+          <span class="counter-dot is-active" data-dot="0"></span>
+          <span class="counter-dot" data-dot="1"></span>
+          <span class="counter-dot" data-dot="2"></span>
+          <span class="counter-dot" data-dot="3"></span>
+          <span class="counter-dot" data-dot="4"></span>
+        </div>
+      </div>
+
+      <!-- CTA buttons -->
+      <div class="hero-ctas">
+        <a href="#work" class="btn-primary">View My Work &#8595;</a>
+        <a href="Nour Eldin Waleed - CV.pdf" target="_blank" rel="noopener" class="btn-secondary">Download CV</a>
+      </div>
+
+    </div>
+
+    <!-- Slide indicator dots -->
+    <div class="hero-dots" aria-label="Slideshow indicators">
+      <button class="hero-dot active" data-dot="0" aria-label="Slide 1, current"></button>
+      <button class="hero-dot" data-dot="1" aria-label="Slide 2"></button>
+      <button class="hero-dot" data-dot="2" aria-label="Slide 3"></button>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       EXPERTISE SECTION
+  ═══════════════════════════════════════ -->
+  <section id="expertise" class="expertise">
+    <div class="container">
+
+      <span class="section-label">// expertise</span>
+      <h2 class="section-title" data-animate>Three Core Competencies</h2>
+
+      <div class="expertise-grid">
+
+        <!-- Card 1: Shop Drawing Coordination — Teal border -->
+        <div class="expertise-card expertise-card--teal" data-animate>
+          <div class="expertise-icon expertise-icon--teal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="20" height="20" rx="1" stroke="#68dbae" stroke-width="1.4"/>
+              <line x1="2" y1="7" x2="22" y2="7" stroke="#68dbae" stroke-width="1.4"/>
+              <line x1="7" y1="7" x2="7" y2="22" stroke="#68dbae" stroke-width="1.4"/>
+              <line x1="10" y1="11" x2="19" y2="11" stroke="#68dbae" stroke-width="0.9"/>
+              <line x1="10" y1="14" x2="17" y2="14" stroke="#68dbae" stroke-width="0.9"/>
+              <line x1="10" y1="17" x2="15" y2="17" stroke="#68dbae" stroke-width="0.9"/>
+            </svg>
+          </div>
+          <h3 class="expertise-card-title">Shop Drawing Coordination</h3>
+          <p class="expertise-card-desc">MEP &amp; structural clash resolution across multi-discipline commercial projects. Full review and approval workflows, duct routing, and coordinated submissions for 200+ drawings.</p>
+          <div class="expertise-tags">
+            <span class="tag tag--teal">AutoCAD</span>
+            <span class="tag tag--teal">Revit</span>
+            <span class="tag tag--teal">ASD</span>
+          </div>
+        </div>
+
+        <!-- Card 2: BIM Automation — Purple border (featured) -->
+        <div class="expertise-card expertise-card--purple" data-animate stagger-1>
+          <div class="expertise-icon expertise-icon--purple">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="9,5 4,12 9,19" stroke="#c5c0ff" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="15,5 20,12 15,19" stroke="#c5c0ff" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="13" y1="3" x2="11" y2="21" stroke="#c5c0ff" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="expertise-card-title">BIM Automation &amp; Scripting</h3>
+          <p class="expertise-card-desc">PyRevit Python add-on development, automated QTO with Excel export, room finish auto-assignment scripts, and model-to-deliverable workflow automation using the Revit API.</p>
+          <div class="expertise-tags">
+            <span class="tag tag--purple">Python</span>
+            <span class="tag tag--purple">PyRevit</span>
+            <span class="tag tag--purple">Revit API</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Technical Analytics — Amber border -->
+        <div class="expertise-card expertise-card--amber" data-animate stagger-2>
+          <div class="expertise-icon expertise-icon--amber">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="17" width="4" height="4" rx="0.5" stroke="#ffb95d" stroke-width="1.2"/>
+              <rect x="10" y="13" width="4" height="8" rx="0.5" stroke="#ffb95d" stroke-width="1.2"/>
+              <rect x="17" y="8"  width="4" height="13" rx="0.5" stroke="#ffb95d" stroke-width="1.2"/>
+              <polyline points="5,15 12,10 19,6" stroke="#ffb95d" stroke-width="1" stroke-dasharray="2,2" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="expertise-card-title">Technical Analytics &amp; Data Reporting</h3>
+          <p class="expertise-card-desc">Power BI cost element dashboards, BOQ preparation and QTO accuracy verification, IPC preparation &amp; invoice auditing, and variation order documentation.</p>
+          <div class="expertise-tags">
+            <span class="tag tag--amber">Power BI</span>
+            <span class="tag tag--amber">Excel</span>
+            <span class="tag tag--amber">Primavera</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       WORK / SELECTED PROJECTS
+  ═══════════════════════════════════════ -->
+  <section id="work" class="work">
+    <div class="container">
+
+      <span class="section-label section-label--purple">// selected work</span>
+
+      <div class="work-header">
+        <h2 class="section-title" data-animate>Precision Projects</h2>
+
+        <!-- Filter tabs with animated sliding underline -->
+        <div class="filter-tabs-wrap">
+          <div class="filter-tabs" id="filterTabs">
+            <button class="filter-tab active" data-filter="all">All</button>
+            <button class="filter-tab" data-filter="shop-drawing">Shop Drawing</button>
+            <button class="filter-tab" data-filter="bim-automation">BIM Automation</button>
+            <button class="filter-tab" data-filter="project-control">Project Control</button>
+            <div class="filter-underline" id="filterUnderline"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Asymmetric project grid -->
+      <div class="project-grid" id="projectGrid">
+
+        <!-- ── 01: IPC Excel System ── -->
+        <div class="project-card" data-category="project-control" data-animate>
+          <div class="card-animation-slot" data-project="01" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuAO7tM2qpqCWa2VcLewcFjLMD54lvmPb991_o4A32FiTzxBNLPKloY2cK_izaNY2irumbVZ8ocCy1zEHABGCuTXL__myEv5h_BBt4-uuYHykv4l56K1gSbSDwe1h3zNzesyEsjPf9FBsFg_bsTrE6SSYfka6HY0wZrh4VWuNtF55KKeixzrSWV1VupX90EUwk22QkUR1o2xTYiTbLpbcFUtA0pSnP_CPp3CyhvTo5QqH8SVVqaHgHLyfTqQJUZggSoB5pSYRxGTbG4d')">
+            <span class="card-number">01</span>
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">IPC Excel System</h3>
+            <p class="card-desc">Automated the IPC process — tracks certified vs. claimed amounts across all payment cycles. Flags disputed line items and generates summary tables, cutting dispute resolution time by 40%.</p>
+            <div class="card-tags">
+              <span class="tag tag--outline">Excel</span>
+              <span class="tag tag--outline">VBA</span>
+              <span class="tag tag--outline">Power Query</span>
+              <span class="tag tag--outline">IPC Preparation</span>
+            </div>
+            <span class="card-arrow" aria-hidden="true">&#8594;</span>
+          </div>
+        </div>
+
+        <!-- ── 02: Power BI BOQ Dashboard ── -->
+        <div class="project-card" data-category="project-control" data-animate stagger-1>
+          <div class="card-animation-slot" data-project="02" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuCSFYAdW-fftTH16n-x5sEuMwc7wJOCL4AnElhcyHvyRzE0EEfGJIgqTMe5uEgUQtz5dtarVrEJJ9a0-Bk6OGO9pgcdEI-GnWvBLF1OC7b6f95wbOceh1sw1Db6ce8MhtgkI0vLmZQyhAqXIxe6W_WZyUq7D-7uWXi-TMIOpyVfZntg_AqfxnX7BCXsQ_wUo8m7k_bx-MNGl2Lznz0MIegYNY94gWZFmVcEHGNvTp3K5vGGdJ97fk1UM88ZD9SLCghIh62VOFoidUVI')">
+            <span class="card-number">02</span>
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">Power BI BOQ Dashboard</h3>
+            <p class="card-desc">Multi-page Power BI report breaking construction costs down by element category — structural, MEP, and architectural finishes. Budget vs. actual variance with drill-down to individual work packages.</p>
+            <div class="card-tags">
+              <span class="tag tag--outline">Power BI</span>
+              <span class="tag tag--outline">Excel</span>
+              <span class="tag tag--outline">BOQ Analytics</span>
+              <span class="tag tag--outline">Cost Reporting</span>
+            </div>
+            <span class="card-arrow" aria-hidden="true">&#8594;</span>
+          </div>
+        </div>
+
+        <!-- ── 03: DrawTrack ── -->
+        <div class="project-card" data-category="shop-drawing" data-animate stagger-2>
+          <div class="card-animation-slot" data-project="03" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuB2SnxpPjdaKolotBC3LPCi_hNVN8uG6oHmbT5mQWm02qq6Io8voCkY-azsFt425WBEjtHS2k2EYcadTWfEf51SM02qUgJNHexdr-3i4B8ybDhl9ZkMxXMCJoWGysPazp6a0-uq3Tq2qYW32bFs1arR3AJUbEOpjxFzLb0Hinn5WSj5vH1CS9paPqa8D_nuVofoVfApy26ZcgKUDSY637T0_-VbbKhNuFNSBzpoGGdQoY8xaknUcY2sHw34Vuwqb640ystbJ8v8x7Co')">
+            <span class="card-number">03</span>
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">DrawTrack</h3>
+            <p class="card-desc">Drawing management and coordination system tracking approval workflows, revision histories, and submission status across 200+ shop drawings for a commercial tower project in Cairo.</p>
+            <div class="card-tags">
+              <span class="tag tag--outline">AutoCAD</span>
+              <span class="tag tag--outline">Revit</span>
+              <span class="tag tag--outline">ASD</span>
+              <span class="tag tag--outline">Drawing Management</span>
+            </div>
+            <span class="card-arrow" aria-hidden="true">&#8594;</span>
+          </div>
+        </div>
+
+        <!-- ── 04: Architectural QTO & Finish Automation ── -->
+        <div class="project-card" data-category="bim-automation" data-animate stagger-3>
+          <div class="card-animation-slot" data-project="04" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuDVGiKL-Nejb9Am1kwS_WBrDcB1Sa5zXRUgkwI3exMNWS7KgAjgY9RU1lnS1nkyY5pWpMxC1eROmIOj81tLVl-0Ip6d0Oq00F1hZUf6Ua-ugt48k4G7JMg_epbwAqX4qhO7Np8alYIp-kQxzoiNSuj55IOzOss5jFIwYY4hR9Z91kol6P4fVD7W_ZTweoOSy6qkJZatOuyltf4UbzcjuTAR3FW64v9gVSNqVvr1bkya-o3X_Q83dJeXqClYtTLS-a6WOZcNJex6TrIX')">
+            <span class="card-number">04</span>
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">Architectural QTO &amp; Finish Automation</h3>
+            <p class="card-desc">Reads room function parameters and auto-assigns floor, wall, and ceiling finish types across 200+ rooms. Also extracts quantity takeoffs directly from the Revit model to formatted Excel sheets.</p>
+            <div class="card-tags">
+              <span class="tag tag--outline">Python</span>
+              <span class="tag tag--outline">PyRevit</span>
+              <span class="tag tag--outline">Revit API</span>
+              <span class="tag tag--outline">Excel Automation</span>
+            </div>
+            <span class="card-arrow" aria-hidden="true">&#8594;</span>
+          </div>
+        </div>
+
+        <!-- ── 05: Revit Flat Slab Plugin (FEATURED — full width) ── -->
+        <div class="project-card project-card--featured" data-category="bim-automation" data-animate>
+
+          <div class="featured-left">
+            <span class="section-label section-label--purple">Structural BIM Automation</span>
+            <h3 class="featured-title">Revit Flat Slab Plugin</h3>
+            <p class="featured-desc">Custom C# Revit add-in that generates flat slab reinforcement details directly from model parameters — reducing structural detailing time from a full workday to under 10 minutes.</p>
+            <div class="card-tags" style="margin-bottom: 24px;">
+              <span class="tag tag--outline">C#</span>
+              <span class="tag tag--outline">Revit API</span>
+              <span class="tag tag--outline">WPF</span>
+              <span class="tag tag--outline">Structural BIM</span>
+            </div>
+            <span class="featured-arrow" aria-hidden="true">&#8594;</span>
+          </div>
+
+          <div class="featured-right">
+            <!-- Large animation slot for featured card -->
+            <div class="card-animation-slot card-animation-slot--large" data-project="05" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBAfYCZadruWsXIHgPoCpiphlQYE0NVfGUXMIbN0z3aAT5dxdP1rGfgZILjVyQEgDKJXPAvSyIX6dsOU-b24aEGsHMKWfF3qGXfBi6Wp6aYEnKFJZ_Op2mxWdQIgIvRn0kh4gaFAy-bmRFVjKajfFsNVXDgNlF9Ij1zJGZ6fbLUwZ4jTpCP7U9neSAbz2AeKI2JmPwX-m3SfmHrCWAk_6Y1UejC-FGHfBeaeutTLHNAYGcY3yoWT_Cu43dM9lnekN7DWHvmjRTYeSeA')">
+              <span class="card-number card-number--ghost">05</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div><!-- /project-grid -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       STACK / TOOLS
+  ═══════════════════════════════════════ -->
+  <section id="stack" class="stack">
+    <div class="container">
+
+      <span class="section-label section-label--amber">// tools &amp; stack</span>
+      <h2 class="section-title" data-animate>The Technical Arsenal</h2>
+
+      <div class="stack-grid">
+
+        <!-- BIM & CAD -->
+        <div data-animate>
+          <p class="stack-group-label">BIM &amp; CAD</p>
+          <div class="stack-icons">
+
+            <div class="stack-icon stack-icon--teal" title="AutoCAD">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <rect x="2" y="2" width="18" height="18" rx="1" stroke="#68dbae" stroke-width="1.3"/>
+                <line x1="5" y1="17" x2="11" y2="5" stroke="#68dbae" stroke-width="1.2"/>
+                <line x1="11" y1="5" x2="17" y2="17" stroke="#68dbae" stroke-width="1.2"/>
+                <line x1="7" y1="13" x2="15" y2="13" stroke="#68dbae" stroke-width="1.2"/>
+              </svg>
+              <span class="stack-icon-label">AutoCAD</span>
+            </div>
+
+            <div class="stack-icon stack-icon--teal" title="Revit">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <rect x="3" y="3" width="16" height="16" rx="1.5" stroke="#68dbae" stroke-width="1.3"/>
+                <line x1="3" y1="9" x2="19" y2="9" stroke="#68dbae" stroke-width="1"/>
+                <line x1="9" y1="9" x2="9" y2="19" stroke="#68dbae" stroke-width="1"/>
+                <rect x="11" y="11" width="6" height="6" rx="0.5" stroke="#68dbae" stroke-width="0.9"/>
+              </svg>
+              <span class="stack-icon-label">Revit</span>
+            </div>
+
+            <div class="stack-icon stack-icon--teal" title="Civil 3D">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <circle cx="11" cy="11" r="8" stroke="#68dbae" stroke-width="1.3"/>
+                <ellipse cx="11" cy="11" rx="8" ry="3.5" stroke="#68dbae" stroke-width="0.9"/>
+                <line x1="3" y1="11" x2="19" y2="11" stroke="#68dbae" stroke-width="0.9"/>
+                <line x1="11" y1="3" x2="11" y2="19" stroke="#68dbae" stroke-width="0.9"/>
+              </svg>
+              <span class="stack-icon-label">Civil 3D</span>
+            </div>
+
+            <div class="stack-icon stack-icon--teal" title="Navisworks">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <polygon points="11,3 19,7 19,15 11,19 3,15 3,7" stroke="#68dbae" stroke-width="1.3" fill="none"/>
+                <polygon points="11,7 15,9 15,13 11,15 7,13 7,9" stroke="#68dbae" stroke-width="0.9" fill="none"/>
+              </svg>
+              <span class="stack-icon-label">Navisworks</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Automation -->
+        <div data-animate stagger-1>
+          <p class="stack-group-label">Automation</p>
+          <div class="stack-icons">
+
+            <div class="stack-icon stack-icon--purple" title="Python">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <path d="M8 3h4a3 3 0 013 3v2H7a2 2 0 00-2 2v4a2 2 0 002 2h1v2a3 3 0 003 3h2" stroke="#c5c0ff" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+                <path d="M14 19H10a3 3 0 01-3-3v-2h8a2 2 0 002-2V8a2 2 0 00-2-2h-1V4a3 3 0 00-3-3H9" stroke="#c5c0ff" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+                <circle cx="9" cy="6.5" r="1" fill="#c5c0ff"/>
+                <circle cx="13" cy="15.5" r="1" fill="#c5c0ff"/>
+              </svg>
+              <span class="stack-icon-label">Python</span>
+            </div>
+
+            <div class="stack-icon stack-icon--purple" title="PyRevit">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <polyline points="7,5 3,11 7,17" stroke="#c5c0ff" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="15,5 19,11 15,17" stroke="#c5c0ff" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="13" y1="3" x2="10" y2="19" stroke="#c5c0ff" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+              <span class="stack-icon-label">PyRevit</span>
+            </div>
+
+            <div class="stack-icon stack-icon--purple" title="Revit API">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <rect x="2" y="6" width="8" height="10" rx="1" stroke="#c5c0ff" stroke-width="1.2"/>
+                <rect x="12" y="6" width="8" height="10" rx="1" stroke="#c5c0ff" stroke-width="1.2"/>
+                <line x1="10" y1="11" x2="12" y2="11" stroke="#c5c0ff" stroke-width="1.2"/>
+                <circle cx="6" cy="11" r="1.5" fill="#c5c0ff"/>
+                <circle cx="16" cy="11" r="1.5" fill="#c5c0ff"/>
+              </svg>
+              <span class="stack-icon-label">Revit API</span>
+            </div>
+
+            <div class="stack-icon stack-icon--purple" title="Dynamo">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <circle cx="5" cy="5" r="2.2" stroke="#c5c0ff" stroke-width="1.1"/>
+                <circle cx="17" cy="5" r="2.2" stroke="#c5c0ff" stroke-width="1.1"/>
+                <circle cx="5" cy="17" r="2.2" stroke="#c5c0ff" stroke-width="1.1"/>
+                <circle cx="17" cy="17" r="2.2" stroke="#c5c0ff" stroke-width="1.1"/>
+                <circle cx="11" cy="11" r="2.2" stroke="#c5c0ff" stroke-width="1.1"/>
+                <line x1="7" y1="5.8" x2="9" y2="9.5" stroke="#c5c0ff" stroke-width="0.9"/>
+                <line x1="15" y1="5.8" x2="13" y2="9.5" stroke="#c5c0ff" stroke-width="0.9"/>
+                <line x1="7" y1="16.2" x2="9" y2="12.5" stroke="#c5c0ff" stroke-width="0.9"/>
+                <line x1="15" y1="16.2" x2="13" y2="12.5" stroke="#c5c0ff" stroke-width="0.9"/>
+              </svg>
+              <span class="stack-icon-label">Dynamo</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Analytics -->
+        <div data-animate stagger-2>
+          <p class="stack-group-label">Analytics &amp; PM</p>
+          <div class="stack-icons">
+
+            <div class="stack-icon stack-icon--amber" title="Power BI">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <rect x="3" y="13" width="4" height="6" rx="0.5" stroke="#ffb95d" stroke-width="1.2"/>
+                <rect x="9" y="9"  width="4" height="10" rx="0.5" stroke="#ffb95d" stroke-width="1.2"/>
+                <rect x="15" y="5" width="4" height="14" rx="0.5" stroke="#ffb95d" stroke-width="1.2"/>
+                <polyline points="5,11 11,7.5 17,4.5" stroke="#ffb95d" stroke-width="1" stroke-dasharray="1.5,1.5" fill="none"/>
+              </svg>
+              <span class="stack-icon-label">Power BI</span>
+            </div>
+
+            <div class="stack-icon stack-icon--amber" title="Excel">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <rect x="2" y="3" width="18" height="16" rx="1" stroke="#ffb95d" stroke-width="1.2"/>
+                <line x1="2" y1="8" x2="20" y2="8" stroke="#ffb95d" stroke-width="0.9"/>
+                <line x1="2" y1="13" x2="20" y2="13" stroke="#ffb95d" stroke-width="0.9"/>
+                <line x1="8" y1="3" x2="8" y2="19" stroke="#ffb95d" stroke-width="0.9"/>
+                <line x1="14" y1="3" x2="14" y2="19" stroke="#ffb95d" stroke-width="0.9"/>
+              </svg>
+              <span class="stack-icon-label">Excel</span>
+            </div>
+
+            <div class="stack-icon stack-icon--amber" title="Primavera P6">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <rect x="2" y="4" width="18" height="14" rx="1" stroke="#ffb95d" stroke-width="1.2"/>
+                <line x1="2" y1="8" x2="20" y2="8" stroke="#ffb95d" stroke-width="0.9"/>
+                <rect x="4" y="10"  width="6" height="2.5" rx="0.5" fill="#ffb95d" opacity="0.5"/>
+                <rect x="4" y="14"  width="10" height="2.5" rx="0.5" fill="#ffb95d" opacity="0.5"/>
+                <rect x="12" y="10" width="6" height="2.5" rx="0.5" fill="#ffb95d" opacity="0.3"/>
+              </svg>
+              <span class="stack-icon-label">Primavera</span>
+            </div>
+
+            <div class="stack-icon stack-icon--amber" title="Office 365">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <circle cx="11" cy="11" r="8.5" stroke="#ffb95d" stroke-width="1.2"/>
+                <circle cx="11" cy="11" r="4" stroke="#ffb95d" stroke-width="0.9"/>
+                <line x1="3" y1="11" x2="19" y2="11" stroke="#ffb95d" stroke-width="0.9"/>
+                <line x1="11" y1="2.5" x2="11" y2="19.5" stroke="#ffb95d" stroke-width="0.9"/>
+              </svg>
+              <span class="stack-icon-label">Office 365</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div><!-- /stack-grid -->
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       ABOUT SECTION
+  ═══════════════════════════════════════ -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-inner">
+
+        <!-- Left: bio text -->
+        <div>
+          <span class="section-label">// about</span>
+          <h2 class="section-title" data-animate>Bridging Engineering<br>and Code</h2>
+          <div class="about-body" data-animate stagger-1>
+            <p>I'm a BIM Engineer operating at the intersection of modeling and commercial construction — using Revit-based BIM not just as a design tool, but as the data source for quantity take-offs, BOQ preparation, variation orders, and invoice verification.</p>
+            <p>I bring model auditing, drawing control, and code compliance into the same workflow, and I build the automation layer on top: Dynamo scripts that eliminate manual bottlenecks and Power BI dashboards that turn model data into commercial reporting.</p>
+            <p>The result is BIM output that's accurate, coordinated, and execution-ready — not just visually complete.</p>
+            <div class="about-badges">
+              <span class="about-badge">Cairo University</span>
+              <span class="about-badge">Civil Engineering</span>
+              <span class="about-badge">Egypt &middot; MENA Region</span>
+              <span class="about-badge">Open to Freelance</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: stats card -->
+        <div class="about-stats-card" data-animate stagger-2>
+
+          <div class="about-stat">
+            <div class="about-stat-value about-stat-value--amber">
+              <span class="stat-counter" data-target="9.8" data-suffix="B EGP" data-decimals="1">0B EGP</span>
+            </div>
+            <div class="about-stat-label">Total Project Portfolio Value</div>
+          </div>
+
+          <div class="about-stat">
+            <div class="about-stat-value about-stat-value--purple">
+              <span class="stat-counter" data-target="200" data-suffix="+ drawings" data-decimals="0">0+ drawings</span>
+            </div>
+            <div class="about-stat-label">Coordinated &amp; Approved Shop Drawings</div>
+          </div>
+
+          <div class="about-stat">
+            <div class="about-stat-value about-stat-value--teal">
+              <span class="stat-counter" data-target="4" data-suffix=" tools built" data-decimals="0">0 tools built</span>
+            </div>
+            <div class="about-stat-label">Proprietary Automation Plugins</div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       CONTACT SECTION
+  ═══════════════════════════════════════ -->
+  <section id="contact" class="contact">
+    <div class="container">
+
+      <h2 class="contact-title" data-animate>Open to<br>Opportunities.</h2>
+      <p class="contact-sub" data-animate stagger-1>Technical office roles, BIM automation projects,<br>and freelance engagements across the MENA region.</p>
+
+      <div class="contact-links" data-animate stagger-2>
+
+        <a href="mailto:nooor.walid@gmail.com" class="contact-link contact-link--purple">
+          <span class="contact-link-icon">&#9993;</span>
+          Email Me
+        </a>
+
+        <a href="https://www.linkedin.com/in/nour-waleed-09965a204" target="_blank" rel="noopener" class="contact-link contact-link--teal">
+          <span class="contact-link-icon">&#128279;</span>
+          LinkedIn
+        </a>
+
+        <a href="Nour Eldin Waleed - CV.pdf" target="_blank" rel="noopener" class="contact-link contact-link--ghost">
+          <span class="contact-link-icon">&#8659;</span>
+          Download CV
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+
+        <span class="footer-logo">NW</span>
+
+        <span class="footer-copy">&copy; 2026 Nour Eldin Waleed &middot; Cairo, Egypt</span>
+
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/nour-waleed-09965a204" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:nooor.walid@gmail.com">Email</a>
+          <a href="Nour Eldin Waleed - CV.pdf" target="_blank" rel="noopener">CV</a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════
+       PROJECT MODAL
+       Source of truth: stitch/modal design/modal_open_project_01/code.html
+  ═══════════════════════════════════════ -->
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"></div>
+
+  <div class="project-modal" id="projectModal"
+       role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle">
+
+    <div class="modal-inner" id="modalInner">
+
+      <!-- Close button -->
+      <button class="modal-close" id="modalClose" aria-label="Close project">&#x2715;</button>
+
+      <!-- ── Gallery (top 55%) ── -->
+      <div class="modal-gallery">
+        <div class="modal-main-image" id="modalMainImage">
+          <img id="modalMainImg" src="" alt="" />
+          <div class="modal-project-badge">
+            <span class="modal-number" id="modalNumber">Project No. 01</span>
+          </div>
+          <button class="gallery-nav gallery-nav--prev" id="galleryPrev" aria-label="Previous image">&#8592;</button>
+          <button class="gallery-nav gallery-nav--next" id="galleryNext" aria-label="Next image">&#8594;</button>
+          <span class="gallery-counter" id="galleryCounter">1 / 1</span>
+        </div>
+        <div class="modal-thumbnails" id="modalThumbnails"></div>
+      </div>
+
+      <!-- ── Info (scrollable bottom) ── -->
+      <div class="modal-info">
+
+        <!-- Header row: title + stat -->
+        <div class="modal-info-header">
+          <div>
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <p class="modal-category" id="modalCategory"></p>
+          </div>
+          <div class="modal-stat-block">
+            <span class="modal-stat-label">Efficiency Gain</span>
+            <div class="modal-stat" id="modalStat"></div>
+          </div>
+        </div>
+
+        <!-- Two-column grid: description + sidebar -->
+        <div class="modal-content-grid">
+
+          <!-- Left: description + outcomes -->
+          <div class="modal-content-main">
+            <div class="modal-section-label">// project brief</div>
+            <p class="modal-desc" id="modalDesc"></p>
+
+            <div class="modal-section-label">// key outcomes</div>
+            <ul class="modal-outcomes" id="modalOutcomes"></ul>
+          </div>
+
+          <!-- Right: tags + metadata -->
+          <div class="modal-content-side">
+            <div class="modal-section-label">// built with</div>
+            <div class="modal-tags" id="modalTags"></div>
+
+            <div class="modal-section-label" style="margin-top:28px;">// metadata</div>
+            <div class="modal-meta" id="modalMeta"></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js" defer></script>
+
 </body>
 </html>
